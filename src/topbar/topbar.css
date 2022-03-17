@@ -1,0 +1,39 @@
+.tb{
+    display: flex;
+    padding: 12px 50px;
+    background-color: black;
+    color: white;
+}
+.tb-left{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.tb-text{
+    padding-right: 15px;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.tb-right{
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.tb-icon{
+    width: 25px;
+    height: 20px;
+    vertical-align: bottom;
+    margin: 0 3px;
+}
+.tb-link{
+    padding-right: 15px;
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+}
+.tb-link:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
