@@ -2,7 +2,7 @@
     display: flex;
     padding: 12px 50px;
     background-color: black;
-    color: white;
+    color: #fff;
 }
 .tb-left{
     flex: 1;
@@ -12,14 +12,19 @@
 }
 .tb-text{
     padding-right: 15px;
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
+   font-family: "adihausDin", Arial, Helvetica, sans-serif;
+   font-weight: bold;
+   line-height: 15px;
+   letter-spacing: 2px;
 }
 .tb-right{
-    flex: 1;
+    flex: 0.5;
     display: flex;
     justify-content: end;
     align-items: center;
+    
 }
 .tb-icon{
     width: 25px;
@@ -29,11 +34,13 @@
 }
 .tb-link{
     padding-right: 15px;
-    font-size: 12px;
+    font-size: 13px;
     text-decoration: none;
-    color: white;
+    color: #fff;
+    font-family: "Amazon Ember", Arial, Helvetica, sans-serif;
+    font-weight: 700;
 }
 .tb-link:hover{
-    text-decoration: underline;
+    color: blue;
     font-weight: bold;
 }

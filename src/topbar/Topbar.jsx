@@ -3,7 +3,7 @@ const Topbar = () => {
     return (
     <div className="tb">
         <div className="tb-left">
-            <p className="tb-text"><img src="img/fast.png" alt="" className="tb-icon"/>¡Envío Gratis a partir de tu compra mayor a $6000,00</p>
+            <p className="tb-text"><img src="img/fast.png" alt="" className="tb-icon"/>¡Envío Gratis a partir de tu compra mayor a $6000 !</p>
             <p className="tb-text"><img src="img/tick.png" alt="" className="tb-icon"/>Aprovechá hasta 3 cutoas sin interés</p>
         </div>
         <div className="tb-right">
