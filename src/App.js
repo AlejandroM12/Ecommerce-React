@@ -7,9 +7,9 @@ const App = () => {
   return <div>
     <Topbar/>
     <Header/>
-    <ItemListContainer name="Axel"/>
-    <ItemListContainer name="Alejandro"/>
-    <ItemListContainer name="Morel"/>
+    <ItemListContainer name="Nike"/>
+    <ItemListContainer name="Adidas"/>
+    <ItemListContainer name="Puma"/>
   </div>
 };
 

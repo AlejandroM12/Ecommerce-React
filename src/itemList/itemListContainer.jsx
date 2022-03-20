@@ -1,10 +1,12 @@
+import ItemCount from '../itemCount/itemCount';
 import './itemList.css';
 
 
 const ItemListContainer = (greeting) => {
     return (
         <div className='itemsL'>   
-            <li>Hola, {greeting.name}</li>
+            <li>Zapatilla {greeting.name}</li>
+            <ItemCount/>
         </div>
     )
 }
