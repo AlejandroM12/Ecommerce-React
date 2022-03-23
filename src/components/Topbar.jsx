@@ -1,4 +1,4 @@
-import "./topbar.css"
+import "../styles/Topbar.scss"
 const Topbar = () => {
     return (
     <div className="tb">

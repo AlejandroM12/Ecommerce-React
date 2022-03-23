@@ -1,11 +1,13 @@
 
 import { useState } from "react";
-import "./itemCountStyle.css";
+import "../styles/ItemCountStyle.scss";
 
-const ItemCount = (props) => {
-    let stock = 15;
-    let countInitial = 1;
+const ItemCount = ({countInitial, stock, add}) => {
     const [count, setCount] = useState(countInitial);
+
+    const addProduct = (num) => {
+        setCount(count + num);
+    };
 
     return (
         <>
@@ -13,7 +15,7 @@ const ItemCount = (props) => {
                 <div className="countMM">
                 <button 
                 className="countMinus"
-                onClick={()=> { setCount(prevCounter => prevCounter -= 1)}}
+                onClick={()=> addProduct(-1)}
                 disabled={count === countInitial ? true : null}
                 >
                     -
@@ -21,7 +23,7 @@ const ItemCount = (props) => {
                 <span className="countNumber">{count}</span>
                 <button 
                 className="countMore"
-                onClick={()=> { setCount(prevCounter => prevCounter += 1)}}
+                onClick={()=> addProduct(+1)}
                 disabled={count === stock ? true : null}
                 >
                     +
@@ -30,7 +32,7 @@ const ItemCount = (props) => {
                 
                 <button 
                 className="btn-primary"
-                onClick={()=> alert(`Agregaste ${count} productos`)}
+                onClick={()=> add(count)}
                 disabled={stock === 0 ? true : null}
                 >
                     Añadir

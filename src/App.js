@@ -1,15 +1,15 @@
-import Topbar from "./topbar/Topbar";
-import Header from "./header/Header";
-import ItemListContainer from "./itemList/itemListContainer";
+import Topbar from "./components/Topbar";
+import Header from "./components/Header";
+import ItemListContainer from "./containers/ItemListContainer";
 
 
 const App = () => {
   return <div>
+    <>
     <Topbar/>
     <Header/>
-    <ItemListContainer name="Nike"/>
-    <ItemListContainer name="Adidas"/>
-    <ItemListContainer name="Puma"/>
+    <ItemListContainer/>
+    </>
   </div>
 };
 
