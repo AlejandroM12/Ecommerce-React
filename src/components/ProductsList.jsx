@@ -1,15 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import Item from './ProductItem';
-import { productList } from '../containers/databaseProducts.js';
+import { getProducts } from '../containers/databaseProducts.js';
 
 const ItemList = () => {
     const [products, setProducts ] = useState([]);
 
-    const getProducts = new Promise((resolve, reject) => {
-        setTimeout(()=>{
-            resolve(productList);
-        }, 2000);
-    });
 
     const getProductsFromDB = async () => {
         try {            

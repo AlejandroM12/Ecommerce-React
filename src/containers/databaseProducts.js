@@ -1,4 +1,4 @@
-export const productList =
+const productList =
 [
     {
         "id": 1,
@@ -82,4 +82,14 @@ export const productList =
     }
    
 ]
-
+export const getProducts = new Promise((resolve, reject) => {
+    let condition = true;
+    if(condition){
+        setTimeout(()=>{
+            resolve(productList);
+        }, 2000);
+    }else{
+        reject('404 not found')
+    }
+    
+});
