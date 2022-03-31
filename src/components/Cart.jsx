@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import shoppingCart from '../assets/img/cart.png';
 import '../styles/Button.scss';
 
@@ -9,13 +9,13 @@ const Cart = () =>{
                 <Link to="/" className="navbar-email">
                     alejandro@example.com
                 </Link>
-                <Link 
+                <NavLink 
                 to='/cart'
                 className="navbar-shopping-cart cartImg" 
                 >
                     <img src={shoppingCart} alt="shopping cart"
                     />
-                </Link>
+                </NavLink>
             </ul>
         </div>
     )

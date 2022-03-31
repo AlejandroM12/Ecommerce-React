@@ -6,7 +6,8 @@ const productList =
         "nombre": "3MC Vulc",
         "marca": "Zapatillas Adidas",
         "precio": "10.999",
-        "stock": 15
+        "stock": 15,
+        "categoria": "hombres"
     },
     {
         "id": 2,
@@ -14,7 +15,8 @@ const productList =
         "nombre": "3MC Vulc Black",
         "marca": "Zapatillas Adidas",
         "precio": "10.999",
-        "stock": 15
+        "stock": 15,
+        "categoria": "mujer"
     },
     {
         "id": 3,
@@ -22,7 +24,8 @@ const productList =
         "nombre": "Advantage Base",
         "marca": "Zapatillas Adidas",
         "precio": "10.999",
-        "stock": 15
+        "stock": 15,
+        "categoria": "niños"
     },
     {
         "id": 4,

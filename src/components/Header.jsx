@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import menu from '../assets/img/icon_menu.svg'
-import '../styles/Header.scss'
+import logo from '../assets/img/logo.svg';
+import '../styles/Header.scss';
 import Cart from './Cart';
 
 const Header = () => {
@@ -8,7 +9,7 @@ const Header = () => {
     <nav>
         <img src={menu} alt="menu" className="menu" />
         <div className="navbar-left">
-            {/* <img src={logo} alt="logo" className="nav-logo" /> */}
+             <NavLink to='/'><img src={logo} alt="logo" className="nav-logo" /></NavLink>
                 <ul>
                 <li>
                         <NavLink to='/categoria/todos' className='a'>Todos</NavLink>
