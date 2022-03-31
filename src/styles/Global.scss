@@ -1,0 +1,33 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    // margin: 3rem 0 0 0;
+    font-family: "adihausDin", Arial, Helvetica, sans-serif;;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #141414;
+    line-height: 1.6;
+}
+
+h1, h2, h3, p, ul {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

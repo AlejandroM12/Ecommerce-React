@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Item from './ProductItem';
 import { getProducts } from '../containers/databaseProducts.js';
+import '../styles/Main.scss'
+import '../styles/ProductList.scss'
 
 const ItemList = () => {
     const [products, setProducts ] = useState([]);
@@ -21,7 +23,8 @@ const ItemList = () => {
     }, []);
     
     return (
-        <div className='product-list-container'>
+            <section className='featured section'>
+                <div className='featured__container bd-grid'>
             {
                 products.length ? (
             <>
@@ -29,9 +32,9 @@ const ItemList = () => {
                         
                         products.map((product) => {
                             return (
-                                <div key={product.id} className="container">
+                                
                                     <Item 
-                                    
+                                        key={product.id}
                                         id={product.id}
                                         
                                         imagen={product.imagen}
@@ -41,7 +44,7 @@ const ItemList = () => {
                                         stock={product.stock}
                                        
                                     />
-                                </div>
+                                
                             );
                         })
                     }
@@ -49,8 +52,9 @@ const ItemList = () => {
                 ) : (
                     <p>Cargando productos...</p>
                 )
-            }
-            </div>
+            }       
+                    </div>
+                </section>
     );
     
 };

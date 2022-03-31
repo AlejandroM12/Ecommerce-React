@@ -1,42 +1,37 @@
-import React from 'react';
-import "../styles/Header.scss";
+import { NavLink } from 'react-router-dom';
+import menu from '../assets/img/icon_menu.svg'
+import '../styles/Header.scss'
+import Cart from './Cart';
 
 const Header = () => {
   return (
-    <div className="h">
-        <div className="h-flex">
-        <div className="h-left">
-            <a href="#" className="h-logo">Alejandro Morel</a>
+    <nav>
+        <img src={menu} alt="menu" className="menu" />
+        <div className="navbar-left">
+            {/* <img src={logo} alt="logo" className="nav-logo" /> */}
+                <ul>
+                <li>
+                        <NavLink to='/categoria/todos' className='a'>Todos</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/categoria/hombres' className='a'>Hombres</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/categoria/mujer' className='a'>Mujer</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to='/categoria/niños' className='a'>Niños</NavLink>
+                    </li>
+                    {/* <li>
+                        <NavLink to='/Toys' className='a'>Toys</NavLink>
+                    </li> */}
+                    <li>
+                        <NavLink to='/categoria/otros' className='a'>Otros</NavLink>
+                    </li>
+                </ul>
         </div>
-        <div className="h-right">
-            <ul className="h-ul">
-                <li className="h-li">
-                    <a href="#" className="h-a"><img src="img/user.png" alt="" className='h-icon' /> Mi Cuenta</a>
-                </li>
-                <li className="h-li">
-                    <a href="#" className="h-a"><img src="img/wishlist.png" alt="" className='h-icon'/> Lista de Deseos</a>
-                </li>
-                <li className="h-li">
-                    <a href="#" className="h-a"><img src="img/cart.png" alt="" className='h-icon'/> Carrito</a>
-                </li>
-                <li className="h-li">
-                    <a href="#" className="h-a"><img src="img/login.png" alt="" className='h-icon'/> Acceso</a>
-                </li>
-            </ul>
-        </div>
-        </div>
-        <div className="h-center">
-            <ul className="h-centerUl">
-                <li className="h-centerLi">
-                    <a href="#" className="h-centerA">Inicio</a>
-                </li>
-                <li className="h-centerLi">
-                    <a href="#" className="h-centerA">Productos</a>
-                </li>
-
-            </ul>
-        </div>
-    </div>
+        <Cart/>
+    </nav>
   )
 }
 
