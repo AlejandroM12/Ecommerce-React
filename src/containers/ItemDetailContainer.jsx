@@ -5,7 +5,7 @@ import { getProducts } from "./databaseProducts";
 
 const ItemDetailContainer = () => {
 
-    const [product, setProduct] = useState({})
+    const [producto, setProduct] = useState({})
     const {detalleId} = useParams();
     
     useEffect(() =>{
@@ -16,9 +16,9 @@ const ItemDetailContainer = () => {
     }, [detalleId])
 
     return (
-        <>
-            <ItemDetail product={product}/>
-        </>
+        <section className="productSection">
+            {producto ? <ItemDetail key={producto.id} producto={producto}/> : <h2>Obteniendo producto...</h2>}
+        </section>
     )
 }
 
