@@ -1,8 +1,9 @@
 
 import { useState } from "react";
 import "../styles/ItemCountStyle.scss";
+import AddCart from "./AddToCart";
 
-const ItemCount = ({countInitial, stock, add}) => {
+const ItemCount = ({countInitial, stock, add, handleInter}) => {
     const [count, setCount] = useState(countInitial);
 
     const addProduct = (num) => {
@@ -30,13 +31,7 @@ const ItemCount = ({countInitial, stock, add}) => {
                 </button>
                 </div>
                 
-                <button 
-                className="btn-primary"
-                onClick={()=> add(count)}
-                disabled={stock === 0 ? true : null}
-                >
-                    Añadir
-                </button>
+                <AddCart handleInter={handleInter}/>
             </div>
         </>
     )

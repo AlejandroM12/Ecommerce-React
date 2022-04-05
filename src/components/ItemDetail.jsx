@@ -1,20 +1,79 @@
+
+import { useState } from 'react';
 import ItemCount from './ItemCount';
-import '../styles/ProductList.scss'
+import  FinishBuying from './FinishBuying';
+import  KeepBuying from './KeepBuying';
+import  next from '../assets/img/icon-next.svg' ;
+import  previous from '../assets/img/icon-previous.svg' ;
+import '../styles/Main.scss'
+import '../styles/ProductsDetails.scss'
+
 
 const ItemDetail = ({producto}) => {
   const add = (quantity) => {
-    alert(`Agregaste ${quantity} productos` );
+    console.log(`Agregaste ${quantity} productos` );
 };
+const [exchange, setExchange] = useState('button')
+
+const handleInter = () => {
+    setExchange('cambia')
+}
     return (
-        <>
-            <article className='sunglass' id={`${producto.id}`}>
-                <img src={producto.imagen}  className="sunglass__img" alt={producto.nombre}/>
-                <p className="sunglass__name">{producto.marca}</p>
-                <span className="sunglass__name">{producto.nombre}</span>
-                <span className="sunglass__price">{producto.price}</span>
-            </article>
-          <ItemCount stock={producto.stock} add={add} countInitial={1}/>
-         </>
+        // SECTION SWIPE IMAGEN
+        <div className="content">
+        <div className="lightbox" id={`${producto.id}`}>
+        <img className="product-here" src={producto.imagen} alt={producto.nombre} />
+          <div className="previous arrow">
+            <img src={previous} alt="icon previous" />
+          </div>
+          <div className="next arrow">
+            <img src={next} alt="icon next" />
+          </div>
+          <div className="thumb-gallery">
+            <div className="pic active">
+              <img src={producto.imagen} alt="thumb-1" />
+            </div>
+            <div className="pic">
+              <img src={producto.imagen} alt="thumb-2" />
+            </div>
+            <div className="pic">
+              <img src={producto.imagen} alt="thumb-3" />
+            </div>
+             <div className="pic">
+              <img src={producto.imagen} alt="thumb-4" />
+            </div> 
+          </div>
+          
+        </div>
+
+        {/* SECTION PRODUCT DETAILS */}
+        <section className="product" id={`${producto.id}`}>
+          <div className="company-name">Alejandro Morel company</div>
+          <div className="title">{producto.nombre}</div>
+          <div className="description">
+          {producto.marca}
+          </div>
+          <div className="price-wrapper">
+            <div className="group">
+              <div className="price">${producto.precio}</div>
+               {/* <div className="discount">10%</div>  */}
+            </div>
+             {/* <div className="old-price">$250.00</div>  */}
+          </div>
+            {
+                    exchange === 'button' ? 
+                    <>
+                        <ItemCount stock={producto.stock} add={add} countInitial={1} handleInter={handleInter}/>
+                    </>
+                        
+                    :
+                    <>
+                        <FinishBuying handleInter={handleInter}/>
+                        <KeepBuying handleInter={handleInter}/>
+                    </>
+                }
+          </section> 
+        </div>
           
     )
 }

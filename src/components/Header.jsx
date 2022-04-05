@@ -12,7 +12,7 @@ const Header = () => {
              <NavLink to='/'><img src={logo} alt="logo" className="nav-logo" /></NavLink>
                 <ul>
                 <li>
-                        <NavLink to='/categoria/todos' className='a'>Todos</NavLink>
+                        <NavLink to='/' className='a'>Todos</NavLink>
                     </li>
                     <li>
                         <NavLink to='/categoria/hombres' className='a'>Hombres</NavLink>
