@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import menu from '../assets/img/icon_menu.svg'
 import logo from '../assets/img/logo.svg';
 import '../styles/Header.scss';
@@ -33,9 +33,9 @@ const Header = () => {
         </div>
         <div className="navbar-right">
             <ul>
-                <Link to="/" className="navbar-email">
+                {/* <Link to="/" className="navbar-email">
                     alejandro@example.com
-                </Link>
+                </Link> */}
                 <Cart/>
             </ul>
         </div>
