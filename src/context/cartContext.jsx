@@ -14,7 +14,7 @@ export const CartProvider = ({children}) => {
 
     useEffect(()=>{
         localStorage.setItem('cartProducts', JSON.stringify(cartItems));
-        console.log(cartItems)
+     console.log(cartItems)
     }, [cartItems]);
 
     const addItemToCart = (producto) => {
@@ -36,18 +36,19 @@ export const CartProvider = ({children}) => {
         };
         const deleteItemCart = (producto) => {
             const inCart = cartItems.find(
-                (productInCart) => productInCart === producto.id
+                (productInCart) => productInCart.id === producto.id
                 );
             if(inCart.cantidad === 1){
                 setCartItems(
                     cartItems.filter((productInCart) => productInCart.id !== producto.id)
                 );
             }else{
-                setCartItems((productInCart) => {
+                setCartItems(
+                    cartItems.map((productInCart) => {
                     if(productInCart.id === producto.id){
                         return {...inCart, cantidad: inCart.cantidad - 1};
                     }else return productInCart;
-                });
+                }));
             }
         };
         return (

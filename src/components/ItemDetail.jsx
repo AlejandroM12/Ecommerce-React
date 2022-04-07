@@ -7,7 +7,7 @@ import  previous from '../assets/img/icon-previous.svg' ;
 import '../styles/Main.scss'
 import '../styles/ProductsDetails.scss'
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 
 
@@ -15,12 +15,7 @@ import { useState } from 'react';
 
 const ItemDetail = ({producto}) => {
 
-
-
 const [exchange, setExchange] = useState('button')
-
-
-
 const handleInter = () => {
     setExchange('cambia')
 }
@@ -72,7 +67,7 @@ const handleInter = () => {
                     exchange === 'button' ? 
                     <>
                         <ItemCount stock={producto.stock} countInitial={1} handleInter={handleInter} producto={producto}/>
-                        
+              
                     </>
                         
                     :
