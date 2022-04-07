@@ -15,7 +15,7 @@ const ItemListContainer = () => {
         if(categoriaId){
             getProducts// funcion que simula una api
             // .then(resp =>{ 
-            //     //throw new Error('ESto es un error')//insatanciando un error
+            //     //throw new Error('ESto es un error')//instanciando un error
             //     console.log(resp)
             //     return resp
             // })
@@ -26,7 +26,7 @@ const ItemListContainer = () => {
         }else{
             getProducts// funcion que simula una api
             // .then(resp =>{ 
-            //     //throw new Error('ESto es un error')//insatanciando un error
+            //     //throw new Error('ESto es un error')//instanciando un error
             //     console.log(resp)
             //     return resp
             // })

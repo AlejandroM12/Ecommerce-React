@@ -1,5 +1,4 @@
 
-import { useState } from 'react';
 import ItemCount from './ItemCount';
 import  FinishBuying from './FinishBuying';
 import  KeepBuying from './KeepBuying';
@@ -8,16 +7,25 @@ import  previous from '../assets/img/icon-previous.svg' ;
 import '../styles/Main.scss'
 import '../styles/ProductsDetails.scss'
 
+import { useState } from 'react';
+
+
+
+
 
 const ItemDetail = ({producto}) => {
-  const add = (quantity) => {
-    console.log(`Agregaste ${quantity} productos` );
-};
+
+
+
 const [exchange, setExchange] = useState('button')
+
+
 
 const handleInter = () => {
     setExchange('cambia')
 }
+
+
     return (
         // SECTION SWIPE IMAGEN
         <div className="content">
@@ -63,7 +71,8 @@ const handleInter = () => {
             {
                     exchange === 'button' ? 
                     <>
-                        <ItemCount stock={producto.stock} add={add} countInitial={1} handleInter={handleInter}/>
+                        <ItemCount stock={producto.stock} countInitial={1} handleInter={handleInter} producto={producto}/>
+                        
                     </>
                         
                     :

@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../components/ItemDetail";
-import Topbar from "../components/Topbar";
-import Header from "../components/Header";
 import { getProducts } from "./databaseProducts";
 
 const ItemDetailContainer = () => {
@@ -25,8 +23,6 @@ const ItemDetailContainer = () => {
             <p>Cargando productos...</p>
             :
             <>
-            <Topbar/>
-            <Header/>
             <section className="productSection">
                 {producto ? <ItemDetail key={producto.id} producto={producto}/> : <h2>Obteniendo producto...</h2>}
             </section>

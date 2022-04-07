@@ -5,17 +5,17 @@ import ItemDetailContainer from '../containers/ItemDetailContainer';
 import '../styles/Global.scss'
 import ItemListContainer from '../containers/ItemListContainer';
 import Cart from '../components/Cart';
+import { CartProvider } from '../context/cartContext';
 
 
 
 const App = () => {
   return (
       <BrowserRouter>
+      <CartProvider>
             <Layout>
-                
+                <Home/>
                 <Routes>
-                    <Route path='/' element={<Home/>} />
-                    <Route path='/categoria/:categoriaId' element={<Home/>} />
                     <Route path='/' element={<ItemListContainer/>} />
                     <Route path='/categoria/:categoriaId' element={<ItemListContainer/>} />
                     <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>} />
@@ -23,6 +23,7 @@ const App = () => {
                     <Route path="/*" element={<Navigate to='/' replace/> } />
                 </Routes>
             </Layout>
+            </CartProvider>
       </BrowserRouter>
   )
 };

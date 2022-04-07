@@ -7,7 +7,8 @@ const productList =
         "marca": "Zapatillas Adidas",
         "precio": "10.999",
         "stock": 15,
-        "categoria": "hombres"
+        "categoria": "hombres",
+        "cantidad": 0
     },
     {
         "id": '2',
@@ -16,7 +17,8 @@ const productList =
         "marca": "Zapatillas Adidas",
         "precio": "10.999",
         "stock": 15,
-        "categoria": "mujer"
+        "categoria": "mujer",
+        "cantidad": 0
     },
     {
         "id": '3',
@@ -25,7 +27,8 @@ const productList =
         "marca": "Zapatillas Adidas",
         "precio": "10.999",
         "stock": 15,
-        "categoria": "niños"
+        "categoria": "niños",
+        "cantidad": 0
     },
     {
         "id": '4',
@@ -34,7 +37,8 @@ const productList =
         "marca": "Zapatillas Adidas",
         "precio": "14.999",
         "stock": 15,
-        "categoria": "mujer"
+        "categoria": "mujer",
+        "cantidad": 0
     },
     {
         "id": '5',
@@ -43,7 +47,8 @@ const productList =
         "marca": "Zapatillas Adidas",
         "precio": "11.499",
         "stock": 15,
-        "categoria": "niños"
+        "categoria": "niños",
+        "cantidad": 0
     },
     {
         "id": '6',
@@ -52,7 +57,8 @@ const productList =
         "marca": "Zapatillas Adidas",
         "precio": "12.499",
         "stock": 15,
-        "categoria": "niños"
+        "categoria": "niños",
+        "cantidad": 0
     },
     {
         "id": '7',
@@ -60,7 +66,8 @@ const productList =
         "nombre": "Lite Racer Rebold",
         "marca": "Zapatillas Adidas",
         "precio": "12.499",
-        "stock": 15
+        "stock": 15,
+        "cantidad": 0
     },
     {
         "id": '8',
@@ -69,7 +76,8 @@ const productList =
         "marca": "Zapatillas Adidas",
         "precio": "13.999",
         "stock": 15,
-        "categoria": "otros"
+        "categoria": "otros",
+        "cantidad": 0
     },
     {
         "id": '9',
@@ -78,7 +86,8 @@ const productList =
         "marca": "Zapatillas Adidas",
         "precio": "8.999",
         "stock": 15,
-        "categoria": "otros"
+        "categoria": "otros",
+        "cantidad": 0
     },
     {
         "id": '10',
@@ -87,7 +96,8 @@ const productList =
         "marca": "Zapatillas Adidas",
         "precio": "10.499",
         "stock": 15,
-        "categoria": "hombres"
+        "categoria": "hombres",
+        "cantidad": 0
     }
    
 ]

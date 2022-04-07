@@ -3,8 +3,9 @@ import { useState } from "react";
 import "../styles/ItemCountStyle.scss";
 import AddCart from "./AddToCart";
 
-const ItemCount = ({countInitial, stock, add, handleInter}) => {
+const ItemCount = ({countInitial, stock, producto}) => {
     const [count, setCount] = useState(countInitial);
+    
 
     const addProduct = (num) => {
         setCount(count + num);
@@ -29,9 +30,10 @@ const ItemCount = ({countInitial, stock, add, handleInter}) => {
                 >
                     +
                 </button>
-                </div>
                 
-                <AddCart handleInter={handleInter}/>
+                
+                </div>
+                <AddCart producto={producto} />
             </div>
         </>
     )
