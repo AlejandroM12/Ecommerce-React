@@ -59,6 +59,22 @@ nav {
 	transform: translateY(-.5rem);
 	transform: rotate(-50deg);
 }
+.count{
+	width: 16px;
+	height: 16px;
+	background: transparent;
+	border-radius: 50%;
+	font-size: 20px;
+	font-weight: bold;
+	position: absolute;
+	right: 35px;
+	margin-top: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+}
+
 
 @media screen and (max-width: 640px) {
 	.menu {

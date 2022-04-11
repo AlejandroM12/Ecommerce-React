@@ -34,7 +34,7 @@ const MyOrder = () => {
 					<p>${sumTotal()}</p>
 				</div>
 				
-				<NavLink to='/checkout'>
+				<NavLink to='/cart'>
 				<button className="primary-button">
 					Checkout
 				</button>

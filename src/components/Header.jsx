@@ -5,6 +5,7 @@ import '../styles/Header.scss';
 import Cart from './Cart';
 
 const Header = () => {
+
   return (
     <nav>
         <img src={menu} alt="menu" className="menu" />
@@ -36,7 +37,7 @@ const Header = () => {
                 {/* <Link to="/" className="navbar-email">
                     alejandro@example.com
                 </Link> */}
-                <Cart/>
+                <Cart />
             </ul>
         </div>
     </nav>

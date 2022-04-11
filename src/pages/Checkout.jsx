@@ -1,8 +1,20 @@
-import React from 'react';
+import { useContext } from 'react';
 import OrderItem from '../components/OrderItem';
+import AppContext from '../context/AppContext';
+import FinishBuying from '../components/FinishBuying'
+
 import '../styles/Checkout.scss';
 
-const Checkout = () => {
+const Checkout = (producto) => {
+	
+	const { state } = useContext(AppContext)
+	const sumTotal = () => {
+		const reducer = (accumulator, currentValue) => accumulator + currentValue.precio;
+		const sum = state.cart.reduce(reducer, 0);
+		return sum;
+	}
+
+
 	return (
 		<div className="Checkout">
 			<div className="Checkout-container">
@@ -10,13 +22,22 @@ const Checkout = () => {
 				<div className="Checkout-content">
 					<div className="order">
 						<p>
-							<span>03.25.21</span>
-							<span>6 articles</span>
+							<span>2022</span>
+							<span>{state.cart.length} Articles</span>
 						</p>
-						<p>$560.00</p>
 					</div>
 				</div>
-				<OrderItem />
+				{state.cart.map((producto,index) => <OrderItem producto={producto} key={producto.id} indexValue={index}/>)}
+				
+			</div>
+			<div className="order">
+					<p>
+						<span>Total</span>
+					</p>
+					<p>${sumTotal()}</p>
+				</div>
+			<div>
+				<FinishBuying/>
 			</div>
 		</div>
 	);

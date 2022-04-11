@@ -5,7 +5,7 @@ import AppContext from '../context/AppContext';
 import '../styles/AddToCart.scss'
 
 
- const AddCart = ({producto}) => {
+ const AddCart = ({producto }) => {
 
     const {addToCart } = useContext(AppContext);
     const handleClick = item => {
@@ -14,7 +14,8 @@ import '../styles/AddToCart.scss'
     return (
         <button
             className='btn'
-            onClick={()=> handleClick(producto)}
+            onClick={()=> handleClick(producto) }
+
         >
             Agregar al carrito
         </button>

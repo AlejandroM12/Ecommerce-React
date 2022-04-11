@@ -12,10 +12,10 @@ const ItemCount = ({countInitial, stock, producto}) => {
 
     return (
         <>
-            <div className="count-container">
                 <div className="countMM">
                 <button 
                 className="countMinus"
+                onc
                 onClick={()=> addProduct(-1)}
                 disabled={count === countInitial ? true : null}
                 >
@@ -30,7 +30,6 @@ const ItemCount = ({countInitial, stock, producto}) => {
                     +
                 </button>
                 </div>
-            </div>
         </>
     )
 }

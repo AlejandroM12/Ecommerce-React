@@ -5,6 +5,7 @@ import  next from '../assets/img/icon-next.svg' ;
 import  previous from '../assets/img/icon-previous.svg' ;
 import '../styles/Main.scss'
 import '../styles/ProductsDetails.scss'
+import "../styles/ItemCountStyle.scss";
 import { useState } from 'react';
 import AddCart from './AddToCart';
 
@@ -60,16 +61,17 @@ const handleInter = () => {
           </div>
             {
                     exchange === 'button' ? 
-                    <>
-                        <ItemCount stock={producto.stock} countInitial={1} handleInter={handleInter}/>
+                    
+                    <div className="count-container">
+                        <ItemCount stock={producto.stock} countInitial={1} handleInter={handleInter} />
                         <AddCart producto={producto} key={producto.id} handleInter={handleInter}/>
-                    </>
+                    </div>
                         
                     :
-                    <>
+                    <div className="count-container">
                         <FinishBuying handleInter={handleInter}/>
                         <KeepBuying handleInter={handleInter}/>
-                    </>
+                    </div>
                 }
           </section> 
         </div>

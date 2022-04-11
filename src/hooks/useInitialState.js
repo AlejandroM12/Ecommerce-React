@@ -17,7 +17,7 @@ const useInitialState = () => {
     const removeFromCart = (indexValue) => {
         setState({
             ...state,
-            cart: state.cart.filter((producto,index) => index != indexValue),
+            cart: state.cart.filter((producto,index) => index !== indexValue),
         });
     }
 

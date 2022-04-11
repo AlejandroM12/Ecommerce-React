@@ -6,8 +6,7 @@ import iconClose from '../assets/img/icon_close.png'
 const OrderItem = (props) => {
 	const {producto, indexValue} = props;
 	const { removeFromCart } = useContext(AppContext);
-
-	console.log(producto)
+	
 	const handleRemove = (index) => {
 		removeFromCart(index);
 	}

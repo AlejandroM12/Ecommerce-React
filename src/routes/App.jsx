@@ -4,7 +4,6 @@ import Home from '../pages/Home';
 import ItemDetailContainer from '../containers/ItemDetailContainer';
 import '../styles/Global.scss'
 import ItemListContainer from '../containers/ItemListContainer';
-import Cart from '../components/Cart';
 import AppContext from '../context/AppContext';
 import Checkout from '../pages/Checkout';
 import useInitialState from '../hooks/useInitialState';
@@ -23,8 +22,7 @@ const App = () => {
                     <Route path='/' element={<ItemListContainer/>} />
                     <Route path='/categoria/:categoriaId' element={<ItemListContainer/>} />
                     <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>} />
-                    <Route path="/cart" element={<Cart />} />
-                    <Route  path="/checkout" element={<Checkout />} />
+                    <Route path="/cart" element={<Checkout />} />
                     <Route path="/*" element={<Navigate to='/' replace/> } />
                 </Routes>
             </Layout>

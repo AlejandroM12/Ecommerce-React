@@ -4,6 +4,7 @@ import AppContext from '../context/AppContext';
 import  MyOrders from '../containers/MyOrders'
 
 
+
 const Cart = () =>{
 
     const [toggleOrders, setToggleOrders] = useState(false);
@@ -14,8 +15,8 @@ const Cart = () =>{
         
         <>
             <BiShoppingBag className="iconCart" onClick={()=>setToggleOrders(!toggleOrders)}>
-            {state.cart.length > 0 ? <div>{state.cart.length}</div> : null }
             </BiShoppingBag>
+            {state.cart.length > 0 ? <div className='count'>{state.cart.length}</div> : null }
             {toggleOrders && <MyOrders />}
         </>
 
