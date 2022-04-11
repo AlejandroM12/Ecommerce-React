@@ -1,4 +1,3 @@
-
 import ItemCount from './ItemCount';
 import  FinishBuying from './FinishBuying';
 import  KeepBuying from './KeepBuying';
@@ -6,25 +5,16 @@ import  next from '../assets/img/icon-next.svg' ;
 import  previous from '../assets/img/icon-previous.svg' ;
 import '../styles/Main.scss'
 import '../styles/ProductsDetails.scss'
-
 import { useState } from 'react';
-
-
-
-
+import AddCart from './AddToCart';
 
 const ItemDetail = ({producto}) => {
 
-
-
 const [exchange, setExchange] = useState('button')
-
-
 
 const handleInter = () => {
     setExchange('cambia')
 }
-
 
     return (
         // SECTION SWIPE IMAGEN
@@ -71,8 +61,8 @@ const handleInter = () => {
             {
                     exchange === 'button' ? 
                     <>
-                        <ItemCount stock={producto.stock} countInitial={1} handleInter={handleInter} producto={producto}/>
-                        
+                        <ItemCount stock={producto.stock} countInitial={1} handleInter={handleInter}/>
+                        <AddCart producto={producto} key={producto.id} handleInter={handleInter}/>
                     </>
                         
                     :

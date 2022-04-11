@@ -1,16 +1,20 @@
 
 import { useContext } from 'react';
-import { CartContext } from '../context/cartContext';
+import AppContext from '../context/AppContext';
 
 import '../styles/AddToCart.scss'
 
- const AddCart = (producto) => {
-    const { addItemToCart } = useContext(CartContext)
-     
+
+ const AddCart = ({producto}) => {
+
+    const {addToCart } = useContext(AppContext);
+    const handleClick = item => {
+		addToCart(item);
+	}
     return (
         <button
             className='btn'
-            onClick={()=> addItemToCart(producto)}
+            onClick={()=> handleClick(producto)}
         >
             Agregar al carrito
         </button>

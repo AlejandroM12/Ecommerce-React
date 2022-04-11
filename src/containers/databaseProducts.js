@@ -5,7 +5,7 @@ const productList =
         "imagen":"../images/zapatillas-3mc-vulc.jpg",
         "nombre": "3MC Vulc",
         "marca": "Zapatillas Adidas",
-        "precio": "10.999",
+        "precio": 10999,
         "stock": 15,
         "categoria": "hombres",
         "cantidad": 0
@@ -15,7 +15,7 @@ const productList =
         "imagen":"../images/zapatillas-3mc-vulc-black.jpg",
         "nombre": "3MC Vulc Black",
         "marca": "Zapatillas Adidas",
-        "precio": "10.999",
+        "precio": 10999,
         "stock": 15,
         "categoria": "mujer",
         "cantidad": 0
@@ -25,7 +25,7 @@ const productList =
         "imagen":"../images/zapatillas-advantage-base.jpg",
         "nombre": "Advantage Base",
         "marca": "Zapatillas Adidas",
-        "precio": "10.999",
+        "precio": 10999,
         "stock": 15,
         "categoria": "niños",
         "cantidad": 0
@@ -35,7 +35,7 @@ const productList =
         "imagen":"../images/zapatillas-campus-adv-unisex.jpg",
         "nombre": "Campus ADV (UNISEX)",
         "marca": "Zapatillas Adidas",
-        "precio": "14.999",
+        "precio": 14999,
         "stock": 15,
         "categoria": "mujer",
         "cantidad": 0
@@ -45,7 +45,7 @@ const productList =
         "imagen":"../images/zapatillas-duramo-sl.jpg",
         "nombre": "Duramo SL",
         "marca": "Zapatillas Adidas",
-        "precio": "11.499",
+        "precio": 11499,
         "stock": 15,
         "categoria": "niños",
         "cantidad": 0
@@ -55,7 +55,7 @@ const productList =
         "imagen":"../images/zapatillas-eq19-run.jpg",
         "nombre": "EQ 19 Run",
         "marca": "Zapatillas Adidas",
-        "precio": "12.499",
+        "precio": 12499,
         "stock": 15,
         "categoria": "niños",
         "cantidad": 0
@@ -65,7 +65,7 @@ const productList =
         "imagen":"../images/zapatillas-lite-racer-rebold.jpg",
         "nombre": "Lite Racer Rebold",
         "marca": "Zapatillas Adidas",
-        "precio": "12.499",
+        "precio": 12499,
         "stock": 15,
         "cantidad": 0
     },
@@ -74,7 +74,7 @@ const productList =
         "imagen":"../images/zapatillas-ny-90.jpg",
         "nombre": "NY 90",
         "marca": "Zapatillas Adidas",
-        "precio": "13.999",
+        "precio": 13999,
         "stock": 15,
         "categoria": "otros",
         "cantidad": 0
@@ -84,7 +84,7 @@ const productList =
         "imagen":"../images/zapatillas-vs-pace-black.jpg",
         "nombre": "Superstar Black",
         "marca": "Zapatillas Adidas",
-        "precio": "8.999",
+        "precio": 8.999,
         "stock": 15,
         "categoria": "otros",
         "cantidad": 0
@@ -94,7 +94,7 @@ const productList =
         "imagen":"../images/zapatillas-runfalcon-2.0.jpg",
         "nombre": "Run Falcon 2.0",
         "marca": "Zapatillas Adidas",
-        "precio": "10.499",
+        "precio": 10.499,
         "stock": 15,
         "categoria": "hombres",
         "cantidad": 0

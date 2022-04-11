@@ -5,14 +5,18 @@ import ItemDetailContainer from '../containers/ItemDetailContainer';
 import '../styles/Global.scss'
 import ItemListContainer from '../containers/ItemListContainer';
 import Cart from '../components/Cart';
-import { CartProvider } from '../context/cartContext';
+import AppContext from '../context/AppContext';
+import Checkout from '../pages/Checkout';
+import useInitialState from '../hooks/useInitialState';
 
 
 
 const App = () => {
+    const initialState = useInitialState();
   return (
+    
       <BrowserRouter>
-      <CartProvider>
+      <AppContext.Provider value={initialState}>
             <Layout>
                 <Home/>
                 <Routes>
@@ -20,11 +24,13 @@ const App = () => {
                     <Route path='/categoria/:categoriaId' element={<ItemListContainer/>} />
                     <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route  path="/checkout" element={<Checkout />} />
                     <Route path="/*" element={<Navigate to='/' replace/> } />
                 </Routes>
             </Layout>
-            </CartProvider>
+            </AppContext.Provider>
       </BrowserRouter>
+      
   )
 };
 
