@@ -6,12 +6,12 @@ import '../styles/Global.scss'
 import ItemListContainer from '../containers/ItemListContainer';
 import AppContext from '../context/AppContext';
 import Checkout from '../pages/Checkout';
-import useInitialState from '../hooks/useInitialState';
+import UseInitialState from '../hooks/UseInitialState';
 
 
 
 const App = () => {
-    const initialState = useInitialState();
+    const initialState = UseInitialState();
   return (
     
       <BrowserRouter>

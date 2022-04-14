@@ -1,22 +1,31 @@
-
 import { useState } from "react";
 import "../styles/ItemCountStyle.scss";
 
-const ItemCount = ({countInitial, stock, producto}) => {
-    const [count, setCount] = useState(countInitial);
-    
+const ItemCount = ({countInitial, stock}) => {
 
-    const addProduct = (num) => {
-        setCount(count + num);
-    };
+    const [count, setCount] = useState(countInitial);
+
+    
+    const sumar = () => {
+        if (count < stock) {
+            setCount( count + 1 )
+        }
+    }
+    const restar = () => {
+        if (count > countInitial) {
+            setCount( count - 1 )
+        }
+    }
+
+
+
 
     return (
         <>
                 <div className="countMM">
                 <button 
                 className="countMinus"
-                onc
-                onClick={()=> addProduct(-1)}
+                onClick={restar}
                 disabled={count === countInitial ? true : null}
                 >
                     -
@@ -24,7 +33,7 @@ const ItemCount = ({countInitial, stock, producto}) => {
                 <span className="countNumber">{count}</span>
                 <button 
                 className="countMore"
-                onClick={()=> addProduct(+1)}
+                onClick={sumar}
                 disabled={count === stock ? true : null}
                 >
                     +
