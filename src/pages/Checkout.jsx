@@ -7,12 +7,13 @@ import '../styles/Checkout.scss';
 
 const Checkout = (producto) => {
 	
-	const { state } = useContext(AppContext)
-	const sumTotal = () => {
-		const reducer = (accumulator, currentValue) => accumulator + currentValue.precio;
-		const sum = state.cart.reduce(reducer, 0);
-		return sum;
-	}
+	const { state, totalPrice } = useContext(AppContext)
+	
+	// const sumTotal = () => {
+	// 	const reducer = (accumulator, currentValue) => accumulator + currentValue.precio;
+	// 	const sum = state.cart.reduce(reducer, 0);
+	// 	return sum;
+	// }
 
 
 	return (
@@ -34,7 +35,7 @@ const Checkout = (producto) => {
 					<p>
 						<span>Total</span>
 					</p>
-					<p>${sumTotal()}</p>
+					<p>${totalPrice() !== 0 && totalPrice()}</p>
 				</div>
 			<div>
 				<FinishBuying/>

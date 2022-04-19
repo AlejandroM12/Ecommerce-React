@@ -6,12 +6,12 @@ import flechita from '../assets/img/flechita.svg';
 import {  NavLink } from 'react-router-dom';
 
 const MyOrder = () => {
-	const {state } = useContext(AppContext);
-	const sumTotal = () => {
-		const reducer = (accumulator, currentValue) => accumulator + currentValue.precio;
-		const sum = state.cart.reduce(reducer, 0);
-		return sum;
-	}
+	const {state, totalPrice} = useContext(AppContext);
+	// const sumTotal = () => {
+	// 	const reducer = (accumulator, currentValue) => accumulator + currentValue.precio;
+	// 	const sum = state.cart.reduce(reducer, 0);
+	// 	return sum;
+	// }
 	return (
 		<aside className="MyOrder">
 			<div className="title-container">
@@ -31,7 +31,7 @@ const MyOrder = () => {
 					<p>
 						<span>Total</span>
 					</p>
-					<p>${sumTotal()}</p>
+					<p>${totalPrice() !== 0 && totalPrice()}</p>
 				</div>
 				
 				<NavLink to='/cart'>

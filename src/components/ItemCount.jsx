@@ -1,31 +1,35 @@
 import { useState } from "react";
 import "../styles/ItemCountStyle.scss";
+import '../styles/AddToCart.scss'
 
-const ItemCount = ({countInitial, stock}) => {
+
+const ItemCount = ({countInitial, stock, onAdd}) => {
 
     const [count, setCount] = useState(countInitial);
 
     
-    const sumar = () => {
+    const addition  = () => {
         if (count < stock) {
             setCount( count + 1 )
         }
     }
-    const restar = () => {
+    const subtraction = () => {
         if (count > countInitial) {
             setCount( count - 1 )
         }
     }
+    const add = () => {
+        onAdd( count )
+    }
 
-
-
+    
 
     return (
         <>
                 <div className="countMM">
                 <button 
                 className="countMinus"
-                onClick={restar}
+                onClick={subtraction}
                 disabled={count === countInitial ? true : null}
                 >
                     -
@@ -33,10 +37,17 @@ const ItemCount = ({countInitial, stock}) => {
                 <span className="countNumber">{count}</span>
                 <button 
                 className="countMore"
-                onClick={sumar}
+                onClick={addition}
                 disabled={count === stock ? true : null}
                 >
                     +
+                </button>
+                <button
+                className='btn'
+                onClick={add}
+
+                >
+                    Agregar al carrito
                 </button>
                 </div>
         </>

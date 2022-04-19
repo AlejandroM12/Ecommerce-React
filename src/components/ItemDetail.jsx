@@ -7,20 +7,16 @@ import '../styles/Main.scss'
 import '../styles/ProductsDetails.scss'
 import "../styles/ItemCountStyle.scss";
 import { useContext, useState } from 'react';
-import AddCart from './AddToCart';
 import AppContext from '../context/AppContext';
 
 const ItemDetail = ({producto}) => {
 
 const [exchange, setExchange] = useState('button')
-
 const {addToCart } = useContext(AppContext)
 
-function onAdd(cant) {
-  // console.log(cant)
-  addToCart( { ...producto, cantidad: cant } )
+const onAdd =  (cant) =>{
+   addToCart( { ...producto, cantidad: cant } )
 }
-console.log(producto);
 const handleInter = () => {
     setExchange('cambia')
 }
@@ -71,8 +67,7 @@ const handleInter = () => {
                     exchange === 'button' ? 
                     
                     <div className="count-container">
-                        <ItemCount stock={producto.stock} countInitial={1} handleInter={handleInter} />
-                        <AddCart producto={producto} key={producto.id} handleInter={handleInter} onAdd={onAdd}/>
+                        <ItemCount producto={producto} key={producto.id} onAdd={onAdd} stock={producto.stock} countInitial={1} handleInter={handleInter} />
                     </div>
                         
                     :
