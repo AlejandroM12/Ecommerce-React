@@ -25,10 +25,7 @@ const useInitialState = () => {
 
     const removeFromCart = (indexValue) => {
         setState(
-            [
-                ...state,
             state.filter((prod,index) => index !== indexValue)
-        ]
         );
     }
     const totalPrice = () =>{
