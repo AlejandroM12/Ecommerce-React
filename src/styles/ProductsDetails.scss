@@ -1,5 +1,10 @@
+
+.productSection{
+  margin-top: 5rem;
+}
 .lightbox {
     position: relative;
+    margin: auto;
   }
   .lightbox .product-here {
     width: 30rem;
@@ -18,8 +23,7 @@
   }
   .lightbox .arrow {
     position: absolute;
-    top: 50%;
-    transition: translateY(-50%);
+    top: 30%;
     background-color: white;
     border-radius: 50%;
     width: 4rem;
@@ -61,6 +65,10 @@
   
   .product {
     padding: 2rem 2.4rem 4.4rem 2.4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   }
   .product .company-name {
     text-transform: uppercase;
@@ -112,13 +120,13 @@
     color: #b6bcc8;
     text-decoration: line-through;
   }
-  @media screen and (min-width: 1290px) {
+  @media screen and (min-width: 1280px) {
     .content {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
         padding: 5rem 5rem;
+        margin-top: -8rem;
       }
     
       .lightbox {
@@ -129,7 +137,17 @@
       }
       .lightbox .previous,
       .lightbox .next {
-        display: none;
+        position: absolute;
+        top: 30%;
+        background-color: white;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
       }
       .lightbox .thumb-gallery {
         display: flex;
@@ -158,7 +176,7 @@
       }
     
       .product {
-        width: 100%;
+        width: 60%;
         padding: 3rem 0 3rem 3rem;
       }
       .product .title {
@@ -172,8 +190,28 @@
       .product .price-wrapper {
         flex-direction: column;
         align-items: flex-start;
-    
         margin-top: 2.4rem;
         gap: 0.8rem;
       }
     }
+
+@media screen and (min-width: 640px) {
+  .lightbox .product-here{
+    margin: auto;
+  }
+}
+@media (min-width: 768px) and ( max-width: 1024px){
+
+  .lightbox .product-here{
+      width: 20rem ;
+  }
+  .lightbox .thumb-gallery .pic {
+    display: flex;
+    width: 15%;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin: auto;
+  }
+  
+}

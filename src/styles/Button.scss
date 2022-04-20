@@ -4,7 +4,7 @@ a {
 }
 
 button {
-    font-family: "Amazon Ember", Arial, Helvetica, sans-serif;;
+    font-family: "adihausDin", Arial, Helvetica, sans-serif;
 }
 
 .button {
@@ -46,19 +46,6 @@ button {
     transition: .3s;
 }
 
-button.btn-icon {
-    font-size: 1rem;
-    border-radius: .3rem;
-    padding: .5rem .75rem;
-    border: none;
-    cursor: pointer;
-    color: #141414;
-    transition: .3s;
-
-    &:hover {
-        transform: translateY(-.2rem);
-    }
-}
 
 .button-light {
     display: inline-flex;

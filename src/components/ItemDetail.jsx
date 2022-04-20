@@ -66,12 +66,12 @@ const handleInter = () => {
             {
                     exchange === 'button' ? 
                     
-                    <div className="count-container">
+                    <div className="productActions">
                         <ItemCount producto={producto} key={producto.id} onAdd={onAdd} stock={producto.stock} countInitial={1} handleInter={handleInter} />
                     </div>
                         
                     :
-                    <div className="count-container">
+                    <div className="productActions">
                         <FinishBuying handleInter={handleInter}/>
                         <KeepBuying handleInter={handleInter}/>
                     </div>

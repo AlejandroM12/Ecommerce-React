@@ -24,11 +24,11 @@ const Checkout = (producto) => {
 					<div className="order">
 						<p>
 							<span>2022</span>
-							<span>{state.cart.length} Articles</span>
+							<span>{state.length} Articles</span>
 						</p>
 					</div>
 				</div>
-				{state.cart.map((producto,index) => <OrderItem producto={producto} key={producto.id} indexValue={index}/>)}
+				{state.map((producto,index) => <OrderItem producto={producto} key={producto.id} indexValue={index}/>)}
 				
 			</div>
 			<div className="order">

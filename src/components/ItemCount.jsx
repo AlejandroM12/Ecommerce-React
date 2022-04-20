@@ -26,9 +26,9 @@ const ItemCount = ({countInitial, stock, onAdd}) => {
 
     return (
         <>
-                <div className="countMM">
+        <div className="productCounter">
                 <button 
-                className="countMinus"
+                className="countMinusMore"
                 onClick={subtraction}
                 disabled={count === countInitial ? true : null}
                 >
@@ -36,21 +36,21 @@ const ItemCount = ({countInitial, stock, onAdd}) => {
                 </button>
                 <span className="countNumber">{count}</span>
                 <button 
-                className="countMore"
+                className="countMinusMore"
                 onClick={addition}
                 disabled={count === stock ? true : null}
                 >
                     +
                 </button>
+            </div>
                 <button
-                className='btn'
+                className='button-fw  btn-add'
                 onClick={add}
 
                 >
-                    Agregar al carrito
+                    Agregar
                 </button>
-                </div>
-        </>
+                </>
     )
 }
 

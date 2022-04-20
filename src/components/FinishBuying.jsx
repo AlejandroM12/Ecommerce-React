@@ -5,11 +5,9 @@ import { addDoc, collection, documentId, getDocs, getFirestore, query, where, wr
 import AppContext from '../context/AppContext';
 
  const FinishBuying =({handleInter}) => {
-     const { state } = useContext(AppContext)
+     
+     const { state, totalPrice } = useContext(AppContext)
    
-     const totalPrice = () => {
-         return state.cart.reduce((acum, prod) => acum + (prod.cantidad * prod.precio), 0)
-     }
      const generateOrder= async (e) => {
          e.preventDefault();
 
@@ -46,14 +44,14 @@ import AppContext from '../context/AppContext';
 
             const queryUpdateStock = await query(
                 queryCollectionStock,
-                where( documentId() , 'in', state.cart.map(it => it.id ) )
+                where( documentId() , 'in', state.map(it => it.id ) )
             )
                 
             const batch = writeBatch(db)
 
             await getDocs(queryUpdateStock)
             .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-                stock: res.data().stock - state.cart.find(item => item.id === res.id).cantidad
+                stock: res.data().stock - state.find(item => item.id === res.id).cantidad
             }) ))
             .finally( ()=> console.log('actualizado'))
 

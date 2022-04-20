@@ -6,10 +6,18 @@ import  MyOrders from '../containers/MyOrders'
 
 
 const Cart = () =>{
+    
 
     const [toggleOrders, setToggleOrders] = useState(false);
-    const {totalItemQuantity } = useContext(AppContext);
+    const { totalItemQuantity } = useContext(AppContext);
 
+    // const [productsLength, setProductsLength] = useState(0);
+
+    // useEffect(() => {
+    //     setProductsLength(
+    //         state.cart?.reduce((acum,prod) => acum + prod.cantidad, 0)
+    //     );
+    //   }, [state.cart]);
 
     return (
         
