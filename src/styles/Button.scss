@@ -25,50 +25,17 @@ button {
 
 .button-fw {
     display: inline-block;
-    background-color: #141414;
-    color: #fff;
+    background-color: transparent;
+    color: #141414;
     padding: 1.125rem 2rem;
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
     border-radius: .5rem;
-    border: 2px solid #8a8a8a;
+    border: 2px solid rgba(169,177,245,0.75);
     transition: .3s;
     cursor: pointer;
     width: 100%;
 
-    &:hover {
-        transform: translateY(-.25rem);
-    }
-}
-
-.button-icon {
-    font-size: 1.25rem;
-    margin-right: 2rem;
-    transition: .3s;
-}
-
-
-.button-light {
-    display: inline-flex;
-    color: #141414;
-    font-weight: 700;
-    align-items: center;
-    
-    &:hover .button-icon {
-        transform: translateX(.25rem);
-    }
-}
-
-.button-outline {
-    /* display: inline-block; */
-    background-color: transparent;
-    color: #141414;
-    padding: 1.125rem 2rem;
-    font-weight: 500;
-    border-radius: .5rem;
-    border: 2px solid #141414;
-    cursor: pointer;
-    transition: .3s;
-    
     &:hover {
         background-color: #141414;
         color: #fff;
@@ -76,65 +43,22 @@ button {
     }
 }
 
-.big-icon {
-    font-size: 5rem;
-    margin: 1.5rem;
-}
 
-.colors {
-    display: flex;
-    align-items: center;
-    gap: .8rem;
-
-    .collect-dots {
-        display: flex;
-        align-items: center;
-        gap: .5rem;
-
-        .dot {
-            height: 25px;
-            width: 25px;
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-            
-            &.selected {
-                border: 3px solid #141414;
-            }
-        }
-    }
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-    padding: 1rem 0;
-}
-
-.button-login {
-    i {
-        font-size: 1.6rem;
-        margin-right: .5rem;
-    }
-
-    padding: .5rem 1rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    border: 2px solid #141414;
+.button-outline {
+    /* display: inline-block; */
+    background-color: transparent;
+    color: #141414;
+    padding: 1.125rem 2rem;
+    font-weight: 700;
     border-radius: .5rem;
+    border: 2px solid rgba(8, 26, 185, 0.75);
+    cursor: pointer;
     transition: .3s;
-    width: 100%;
     
     &:hover {
-        background-color: #141414;
+        background-color: rgba(13, 35, 236, 0.75);
         color: #fff;
-        transform: translateX(-.2rem);
+        transform: translateY(-.2rem);
     }
 }
 
-w-100 {
-    width: 100%;
-}

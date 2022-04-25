@@ -3,7 +3,7 @@ import "../styles/ItemCountStyle.scss";
 import '../styles/AddToCart.scss'
 
 
-const ItemCount = ({countInitial, stock, onAdd}) => {
+const ItemCount = ({countInitial, stock, onAdd, handleInter}) => {
 
     const [count, setCount] = useState(countInitial);
 
@@ -19,7 +19,8 @@ const ItemCount = ({countInitial, stock, onAdd}) => {
         }
     }
     const add = () => {
-        onAdd( count )
+        onAdd( count );
+        handleInter();
     }
 
     

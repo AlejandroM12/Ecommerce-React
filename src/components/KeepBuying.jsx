@@ -7,7 +7,7 @@ const KeepBuying = ({handleInter})=> {
             <Link to='/'>
                 <button
                     onClick={handleInter}
-                    className='btn'
+                    className='button-fw '
                 >Seguir Comprando</button>
             </Link>
         </>

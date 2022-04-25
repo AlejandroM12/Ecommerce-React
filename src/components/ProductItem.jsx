@@ -11,7 +11,7 @@ const Item = ({producto }) => {
             <p className="sunglass__name">{producto.marca}</p>
             <span className="sunglass__name">{producto.nombre} - {producto.categoria}</span>
             <span className="sunglass__price">${producto.precio}</span>
-            <Link className='button-light' to={`/detalle/${producto.id}`}>Detalles</Link>
+            <Link className='button-outline' to={`/detalle/${producto.id}`}>Ver Producto</Link>
     </article>
     )
 }

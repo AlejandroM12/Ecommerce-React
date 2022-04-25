@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { BiShoppingBag } from 'react-icons/bi'
+import { BiShoppingBag } from 'react-icons/bi';
 import AppContext from '../context/AppContext';
 import  MyOrders from '../containers/MyOrders'
 

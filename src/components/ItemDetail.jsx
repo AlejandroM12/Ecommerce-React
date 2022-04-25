@@ -1,24 +1,25 @@
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import AppContext from '../context/AppContext';
 import ItemCount from './ItemCount';
-import  FinishBuying from './FinishBuying';
 import  KeepBuying from './KeepBuying';
 import  next from '../assets/img/icon-next.svg' ;
 import  previous from '../assets/img/icon-previous.svg' ;
 import '../styles/Main.scss'
 import '../styles/ProductsDetails.scss'
 import "../styles/ItemCountStyle.scss";
-import { useContext, useState } from 'react';
-import AppContext from '../context/AppContext';
+
 
 const ItemDetail = ({producto}) => {
 
-const [exchange, setExchange] = useState('button')
+const [exchange, setExchange] = useState('button-fw')
 const {addToCart } = useContext(AppContext)
 
 const onAdd =  (cant) =>{
    addToCart( { ...producto, cantidad: cant } )
 }
 const handleInter = () => {
-    setExchange('cambia')
+    setExchange('change')
 }
 
     return (
@@ -64,7 +65,7 @@ const handleInter = () => {
              {/* <div className="old-price">$250.00</div>  */}
           </div>
             {
-                    exchange === 'button' ? 
+                    exchange === 'button-fw' ? 
                     
                     <div className="productActions">
                         <ItemCount producto={producto} key={producto.id} onAdd={onAdd} stock={producto.stock} countInitial={1} handleInter={handleInter} />
@@ -72,7 +73,12 @@ const handleInter = () => {
                         
                     :
                     <div className="productActions">
-                        <FinishBuying handleInter={handleInter}/>
+                        <Link to='/cart'>
+                            <button
+                                className='button-fw'
+                                onClick={handleInter}
+                            >Terminar mi compra</button>
+                        </Link>
                         <KeepBuying handleInter={handleInter}/>
                     </div>
                 }

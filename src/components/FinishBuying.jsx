@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from 'firebase/firestore'
 import AppContext from '../context/AppContext';
 
- const FinishBuying =({handleInter}) => {
+ const FinishBuying =() => {
      
      const { state, totalPrice } = useContext(AppContext)
    
@@ -15,7 +15,7 @@ import AppContext from '../context/AppContext';
         order.buyer = { name: 'Alejandro', email: 'a@gmail.com', phone: '123123123'}
         order.total = totalPrice()
    
-        order.items = state.cart.map( cartItem => {
+        order.items = state.map( cartItem => {
             const id = cartItem.id
             const name = cartItem.nombre
             const price = cartItem.precio * cartItem.cantidad
@@ -56,14 +56,14 @@ import AppContext from '../context/AppContext';
             .finally( ()=> console.log('actualizado'))
 
             batch.commit()
-
      }
     
     return (
         <>
             <Link to='/cart'>
                 <button
-                    className='btn'
+                    type='submit'
+                    className='button-fw'
                     onClick={generateOrder}
                 >Terminar mi compra</button>
             </Link>
