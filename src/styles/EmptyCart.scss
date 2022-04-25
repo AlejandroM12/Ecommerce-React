@@ -1,0 +1,20 @@
+.containerEmptyCart{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+.containerEmptyCart .titleEmptyCart{
+    font-size: 36px;
+    line-height: 32px;
+}
+.containerEmptyCart .descriptionEmptyCart{
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 16px;
+}
+.bigIConCart{
+    font-size: 9rem;
+    margin: 1.5rem;
+}
