@@ -14,9 +14,10 @@ const MyOrder = () => {
 	// }
 	return (
 		<aside className="MyOrder">
+			{ state.length > 0 ? ( <>
 			<div className="title-container">
 				<img src={flechita} alt="arrow" />
-				<p className="title">My order</p>
+				<p className="title">Tu Carrito</p>
 			</div>
 			<div className="my-order-content">
 				{state.map((producto,index) => (
@@ -36,10 +37,16 @@ const MyOrder = () => {
 				
 				<NavLink to='/cart'>
 				<button className="primary-button">
-					Checkout
+					IR A PAGAR
 				</button>
 				</ NavLink>
 			</div>
+			</>
+			) : (
+				<>
+				<h2 className='empty-cart-notififaction'>El carrito está vacío</h2>
+				</>
+			)}
 		</aside>
 	);
 }
