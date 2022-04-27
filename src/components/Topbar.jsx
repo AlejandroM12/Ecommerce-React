@@ -1,6 +1,7 @@
 import fast from '../assets/img/fast.png';
 import tick from '../assets/img/tick.png';
 import "../styles/Topbar.scss"
+
 const Topbar = () => {
     return (
     <div className="tb">

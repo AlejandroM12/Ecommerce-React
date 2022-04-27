@@ -2,17 +2,11 @@ import { useContext } from "react";
 import AppContext from "../context/AppContext";
 import ItemCheckout from "../components/ItemCheckout";
 import EmptyCart from "../components/EmptyCart";
-import "../styles/Checkout.scss";
 import FinishBuying from "../components/FinishBuying";
+import "../styles/Checkout.scss";
 
 const Checkout = () => {
   const { state, totalPrice } = useContext(AppContext);
-
-  // const sumTotal = () => {
-  // 	const reducer = (accumulator, currentValue) => accumulator + currentValue.precio;
-  // 	const sum = state.cart.reduce(reducer, 0);
-  // 	return sum;
-  // }
 
   const date = new Date();
 

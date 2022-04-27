@@ -1,22 +1,17 @@
 import React, {useContext} from 'react';
 import OrderItem from '../components/OrderItem';
 import AppContext from '../context/AppContext';
-import '../styles/MyOrders.scss';
-import flechita from '../assets/img/flechita.svg';
+import arrow from '../assets/img/flechita.svg';
 import {  NavLink } from 'react-router-dom';
+import '../styles/MyOrders.scss';
 
 const MyOrder = () => {
 	const {state, totalPrice} = useContext(AppContext);
-	// const sumTotal = () => {
-	// 	const reducer = (accumulator, currentValue) => accumulator + currentValue.precio;
-	// 	const sum = state.cart.reduce(reducer, 0);
-	// 	return sum;
-	// }
 	return (
 		<aside className="MyOrder">
 			{ state.length > 0 ? ( <>
 			<div className="title-container">
-				<img src={flechita} alt="arrow" />
+				<img src={arrow} alt="arrow" />
 				<p className="title">Tu Carrito</p>
 			</div>
 			<div className="my-order-content">

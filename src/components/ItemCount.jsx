@@ -55,4 +55,3 @@ const ItemCount = ({countInitial, stock, onAdd, handleInter}) => {
 }
 
 export default ItemCount;
-

@@ -1,8 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import menu from '../assets/img/icon_menu.svg'
+import menu from '../assets/img/icon_menu.svg';
 import logo from '../assets/img/logo.svg';
-import '../styles/Header.scss';
 import Cart from './Cart';
+import '../styles/Header.scss';
 
 const Header = () => {
 
@@ -28,15 +28,12 @@ const Header = () => {
                         <NavLink to='/Toys' className='a'>Toys</NavLink>
                     </li> */}
                     <li>
-                        <NavLink to='/categoria/otros' className='a'>Otros</NavLink>
+                        <NavLink to='/categoria/unisex' className='a'>Otros</NavLink>
                     </li>
                 </ul>
         </div>
         <div className="navbar-right">
             <ul>
-                {/* <Link to="/" className="navbar-email">
-                    alejandro@example.com
-                </Link> */}
                 <Cart />
             </ul>
         </div>
@@ -44,4 +41,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

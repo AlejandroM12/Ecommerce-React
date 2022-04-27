@@ -6,7 +6,6 @@ const Home = () => {
         <>
             <Topbar />
             <Header />
-            
         </>
     )
 }

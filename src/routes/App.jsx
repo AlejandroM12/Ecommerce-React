@@ -7,10 +7,6 @@ import AppContext from '../context/AppContext';
 import Checkout from '../pages/Checkout';
 import useInitialState from '../hooks/useInitialState';
 
-
-
-
-
 const App = () => {
     const initialState = useInitialState();
   return (

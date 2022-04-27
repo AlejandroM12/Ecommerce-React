@@ -1,12 +1,10 @@
 import { useContext, useState } from "react";
 import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch} from "firebase/firestore";
 import AppContext from "../context/AppContext";
-import "../styles/Form.scss";
 import useForm from "../hooks/useForm";
 import {BiLoaderCircle} from "react-icons/bi";
 import toast, { Toaster } from "react-hot-toast";
-
-
+import "../styles/Form.scss";
 
 const initialForm = {
   name: "",
@@ -18,8 +16,7 @@ const validationsForm = (form) => {
   let errors = {};
   let regexNameSurname = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
   let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
-  let regexPhone =
-    /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
+  let regexPhone = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
 
   if (!form.name.trim()) {
     errors.name = toast.error("El campo 'Nombre' es requerido");
@@ -194,14 +191,15 @@ const FinishBuying = () => {
               Usaremos tus datos para informarte sobre la entrega.
               
             </span>
-            <button className="button-fw" disabled={ loading }>
-            {loading && <BiLoaderCircle />} Terminar mi compra 
-              </button>
+            <button 
+              className="button-fw" 
+              disabled={ loading }>
+              {loading && <BiLoaderCircle />} Terminar mi compra 
+            </button>
           </form>
-          
-          {response && (
-            <Toaster position="bottom-center"/>
-          )}
+            {response && (
+              <Toaster position="bottom-center"/>
+            )}
         </div>
       </section>
   );

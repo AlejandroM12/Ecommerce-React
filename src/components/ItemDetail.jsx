@@ -36,16 +36,16 @@ const handleInter = () => {
           </div>
           <div className="thumb-gallery">
             <div className="pic active">
-              <img src={producto.imagen} alt="thumb-1" />
+              <img src={producto.thumbnail1} alt="thumb-1" />
             </div>
             <div className="pic">
-              <img src={producto.imagen} alt="thumb-2" />
+              <img src={producto.thumbnail2} alt="thumb-2" />
             </div>
             <div className="pic">
-              <img src={producto.imagen} alt="thumb-3" />
+              <img src={producto.thumbnail3} alt="thumb-3" />
             </div>
              <div className="pic">
-              <img src={producto.imagen} alt="thumb-4" />
+              <img src={producto.thumbnail4} alt="thumb-4" />
             </div> 
           </div>
           
@@ -53,7 +53,7 @@ const handleInter = () => {
 
         {/* SECTION PRODUCT DETAILS */}
         <section className="product" id={`${producto.id}`}>
-          <div className="company-name">Alejandro Morel company</div>
+          <div className="company-name">{producto.categoria } • {producto.uso}</div>
           <div className="title">{producto.nombre}</div>
           <div className="description">
           {producto.marca}
