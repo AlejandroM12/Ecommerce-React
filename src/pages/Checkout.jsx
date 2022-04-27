@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
-import Form from "../components/Form";
 import ItemCheckout from "../components/ItemCheckout";
 import EmptyCart from "../components/EmptyCart";
 import "../styles/Checkout.scss";
+import FinishBuying from "../components/FinishBuying";
 
 const Checkout = () => {
   const { state, totalPrice } = useContext(AppContext);
@@ -43,7 +43,7 @@ const Checkout = () => {
             <p>${totalPrice() !== 0 && totalPrice()}</p>
           </div>
         </div>
-        <Form />
+        <FinishBuying />
       </div>
       </>
         ) : (

@@ -22,7 +22,7 @@ const ItemCount = ({countInitial, stock, onAdd, handleInter}) => {
         onAdd( count );
         handleInter();
     }
-
+    
     
 
     return (
@@ -47,7 +47,6 @@ const ItemCount = ({countInitial, stock, onAdd, handleInter}) => {
                 <button
                 className='button-fw  btn-add'
                 onClick={add}
-
                 >
                     Agregar
                 </button>

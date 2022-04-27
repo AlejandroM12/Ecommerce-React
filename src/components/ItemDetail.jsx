@@ -8,6 +8,7 @@ import  previous from '../assets/img/icon-previous.svg' ;
 import '../styles/Main.scss'
 import '../styles/ProductsDetails.scss'
 import "../styles/ItemCountStyle.scss";
+import  { Toaster } from 'react-hot-toast';
 
 
 const ItemDetail = ({producto}) => {
@@ -77,12 +78,21 @@ const handleInter = () => {
                             <button
                                 className='button-fw'
                                 onClick={handleInter}
-                            >Terminar mi compra</button>
+                            >Ir a Pagar</button>
                         </Link>
                         <KeepBuying handleInter={handleInter}/>
                     </div>
                 }
           </section> 
+          <Toaster position='bottom-center' toastOptions={{
+                duration: 5000,
+                style: {
+                  background: 'transparent',
+                  color: '#141414',
+                  fontWeight: 600,
+                  border: '2px solid #141414',
+                },
+              }}/>
         </div>
           
     )

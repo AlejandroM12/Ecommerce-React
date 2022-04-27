@@ -2,11 +2,12 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '../containers/Layout';
 import Home from '../pages/Home';
 import ItemDetailContainer from '../containers/ItemDetailContainer';
-import '../styles/Global.scss'
 import ItemListContainer from '../containers/ItemListContainer';
 import AppContext from '../context/AppContext';
 import Checkout from '../pages/Checkout';
-import useInitialState from '../hooks/UseInitialState';
+import useInitialState from '../hooks/useInitialState';
+
+
 
 
 

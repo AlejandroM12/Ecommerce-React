@@ -5,7 +5,7 @@ import '../styles/EmptyCart.scss';
 const EmptyCart = () => {
 
     return (
-
+            
             <div className='containerEmptyCart'>
             <BiShoppingBag className='bigIConCart'/>
             <h2 className='titleEmptyCart'>¡Tu carrito está vacío!</h2>

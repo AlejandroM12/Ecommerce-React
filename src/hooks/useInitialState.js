@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import toast from 'react-hot-toast';
 
 
 
@@ -7,6 +8,7 @@ const useInitialState = () => {
 
     const addToCart = (item) => {
         const idX = state.findIndex(prod => item.id === prod.id);
+        toast.success(`Agregaste ${item.cantidad} ${item.nombre}`)
         console.log(idX)
         console.log(item)
         if(idX !== -1){
@@ -22,6 +24,10 @@ const useInitialState = () => {
         }
         
     };
+
+    const emptyCart = () => {
+        setState([])
+    }
 
     const removeFromCart = (indexValue) => {
         setState(
@@ -39,6 +45,7 @@ const useInitialState = () => {
     return {
         state,
         addToCart,
+        emptyCart,
         removeFromCart,
         totalPrice,
         totalItemQuantity
