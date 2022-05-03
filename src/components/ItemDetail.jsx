@@ -5,10 +5,14 @@ import ItemCount from './ItemCount';
 import  KeepBuying from './KeepBuying';
 import  next from '../assets/img/icon-next.svg' ;
 import  previous from '../assets/img/icon-previous.svg' ;
+import  { Toaster } from 'react-hot-toast';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 import '../styles/Main.scss'
 import '../styles/ProductsDetails.scss'
 import "../styles/ItemCountStyle.scss";
-import  { Toaster } from 'react-hot-toast';
+import "../styles/Sliderimg.scss"
+
 
 
 const ItemDetail = ({producto}) => {
@@ -26,31 +30,23 @@ const handleInter = () => {
     return (
         // SECTION SWIPE IMAGEN
         <div className="content">
-        <div className="lightbox" id={`${producto.id}`}>
-        <img className="product-here" src={producto.imagen} alt={producto.nombre} />
-          <div className="previous arrow">
-            <img src={previous} alt="icon previous" />
-          </div>
-          <div className="next arrow">
-            <img src={next} alt="icon next" />
-          </div>
-          <div className="thumb-gallery">
-            <div className="pic active">
-              <img src={producto.thumbnail1} alt="thumb-1" />
-            </div>
-            <div className="pic">
-              <img src={producto.thumbnail2} alt="thumb-2" />
-            </div>
-            <div className="pic">
-              <img src={producto.thumbnail3} alt="thumb-3" />
-            </div>
-             <div className="pic">
-              <img src={producto.thumbnail4} alt="thumb-4" />
-            </div> 
-          </div>
-          
-        </div>
-
+            <Carousel  >
+                  <div className="image">
+                    <img src={producto.imagen} alt={producto.nombre} />
+                  </div>
+                  <div className="image">
+                    <img src={producto.thumbnail1} alt={producto.nombre} />
+                  </div>
+                  <div className="image">
+                    <img src={producto.thumbnail2} alt={producto.nombre} />
+                  </div>
+                  <div className="image">
+                    <img src={producto.thumbnail3} alt={producto.nombre} />
+                  </div>
+                  <div className="image">
+                    <img src={producto.thumbnail4} alt={producto.nombre} />
+                  </div>
+            </Carousel>
         {/* SECTION PRODUCT DETAILS */}
         <section className="product" id={`${producto.id}`}>
           <div className="company-name">{producto.categoria } • {producto.uso}</div>
