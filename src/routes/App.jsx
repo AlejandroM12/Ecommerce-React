@@ -6,12 +6,14 @@ import ItemListContainer from '../containers/ItemListContainer';
 import AppContext from '../context/AppContext';
 import Checkout from '../pages/Checkout';
 import useInitialState from '../hooks/useInitialState';
+import '../styles/Loading.scss';
+
 
 const App = () => {
     const initialState = useInitialState();
+
   return (
-    
-      <BrowserRouter>
+        <BrowserRouter>
       <AppContext.Provider value={initialState}>
             <Layout>
                 <Home/>
@@ -25,7 +27,6 @@ const App = () => {
             </Layout>
             </AppContext.Provider>
       </BrowserRouter>
-      
   )
 };
 

@@ -3,15 +3,17 @@
     padding: 12px 50px;
     background-color: black;
     color: #fff;
+    justify-content: center;
+    align-items: center;
 }
 .tb-left{
     flex: 1;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 .tb-text{
-    padding-right: 15px;
+    margin: 0 100px 0 0;
     font-size: 11px;
     text-transform: uppercase;
    font-family: "adihausDin", Arial, Helvetica, sans-serif;
@@ -26,15 +28,8 @@
     vertical-align: bottom;
     margin: 0 3px;
 }
-.tb-link{
-    padding-right: 15px;
-    font-size: 13px;
-    text-decoration: none;
-    color: #fff;
-    font-family: "Amazon Ember", Arial, Helvetica, sans-serif;
-    font-weight: 700;
-}
-.tb-link:hover{
-    color: blue;
-    font-weight: bold;
+@media screen and (max-width: 768px) {
+    .tb{
+        display: none;
+    }
 }

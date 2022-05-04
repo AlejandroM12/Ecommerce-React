@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import AppContext from '../context/AppContext';
 import ItemCount from './ItemCount';
 import  KeepBuying from './KeepBuying';
-import  next from '../assets/img/icon-next.svg' ;
-import  previous from '../assets/img/icon-previous.svg' ;
 import  { Toaster } from 'react-hot-toast';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"

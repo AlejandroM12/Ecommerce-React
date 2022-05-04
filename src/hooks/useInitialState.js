@@ -9,8 +9,6 @@ const useInitialState = () => {
     const addToCart = (item) => {
         const idX = state.findIndex(prod => item.id === prod.id);
         toast.success(`Agregaste ${item.cantidad} ${item.nombre}`)
-        console.log(idX)
-        console.log(item)
         if(idX !== -1){
             const newArray = [...state]
             const newCant = state[idX].cantidad + item.cantidad

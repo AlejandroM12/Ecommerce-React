@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where} from "firebase/firestore";
 import ItemList from "../components/ItemList.jsx";
+import CoverPage from "../components/CoverPage.jsx";
+import  loadingGif  from "../assets/img/loading.gif";
 import "../styles/Main.scss";
 import "../styles/ProductList.scss";
+
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
@@ -30,8 +33,11 @@ const ItemListContainer = () => {
 
   return (
     <>
+    <CoverPage />
       {loading ? (
-        <p>Cargando productos...</p>
+        <div id="spinner" className="container">
+        <img src={loadingGif}className="gif" alt="loading" />
+      </div>
       ) : (
         <ItemList productos={productos} />
       )}

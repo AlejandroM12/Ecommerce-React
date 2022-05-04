@@ -77,7 +77,7 @@ const FinishBuying = () => {
           setForm(initialForm);
           setTimeout(()=> setResponse(false), 5000)
           toast.success(`Tu compra ${resp.id} fue realizada con éxito`)
-          setTimeout(()=> emptyCart(), 8000)
+          setTimeout(()=> emptyCart(), 6500)
       })
       .catch((err) => console.log(err))
       .finally(()=> toast('¡Muchas gracias por tu compra!', {

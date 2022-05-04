@@ -6,8 +6,10 @@ const Topbar = () => {
     return (
     <div className="tb">
         <div className="tb-left">
-            <p className="tb-text"><img src={fast} alt="" className="tb-icon"/>¡Envío Gratis a partir de tu compra mayor a $6000 !</p>
-            <p className="tb-text"><img src={tick} alt="" className="tb-icon"/>Aprovechá hasta 3 cutoas sin interés</p>
+            <img src={fast} alt="icon-topbar" className="tb-icon"/>
+            <p className="tb-text">¡Envío Gratis a partir de tu compra mayor a $10.000 !</p>
+            <img src={tick} alt="icon-topbar" className="tb-icon"/>
+            <p className="tb-text">Aprovechá hasta 3 cutoas sin interés</p>
         </div>
       </div>
     )
