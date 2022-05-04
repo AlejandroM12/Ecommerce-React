@@ -81,7 +81,7 @@ const handleInter = () => {
           <Toaster position='bottom-center' toastOptions={{
                 duration: 5000,
                 style: {
-                  background: 'transparent',
+                  background: '#fff',
                   color: '#141414',
                   fontWeight: 600,
                   border: '2px solid #141414',

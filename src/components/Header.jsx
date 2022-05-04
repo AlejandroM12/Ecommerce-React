@@ -1,44 +1,73 @@
-import { NavLink } from 'react-router-dom';
-import menu from '../assets/img/icon_menu.svg';
-import logo from '../assets/img/logo.svg';
-import Cart from './Cart';
-import '../styles/Header.scss';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "../assets/img/logo.svg";
+import Cart from "./Cart";
+import { FaAlignJustify, FaWindowClose } from "react-icons/fa";
+import "../styles/Header.scss";
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", changeWidth);
+    return () => {
+      window.removeEventListener("resize", changeWidth);
+    };
+  }, []);
 
   return (
-    <nav>
-        <img src={menu} alt="menu" className="menu" />
-        <div className="navbar-left">
-             <NavLink to='/'><img src={logo} alt="logo" className="nav-logo" /></NavLink>
-                <ul>
-                <li>
-                        <NavLink to='/' className='a'>Todos</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/categoria/hombres' className='a'>Hombres</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/categoria/mujer' className='a'>Mujer</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to='/categoria/niños' className='a'>Niños</NavLink>
-                    </li>
-                    {/* <li>
-                        <NavLink to='/Toys' className='a'>Toys</NavLink>
-                    </li> */}
-                    <li>
-                        <NavLink to='/categoria/unisex' className='a'>Otros</NavLink>
-                    </li>
-                </ul>
-        </div>
-        <div className="navbar-right">
-            <ul>
-                <Cart />
-            </ul>
-        </div>
+    <nav className="navbar">
+      <Link to="/">
+        <img src={logo} alt="logo" className="nav-logo" />
+      </Link>
+      <ul className={isMobile ? "nav-links-mobile" : "nav-links"}
+      onClick={ ()=> setIsMobile(false)}
+      >
+        {(isMobile || screenWidth > 768) && (
+          <>
+            <Link to="/" className="all">
+              <li className="hover-nav">Todos</li>
+            </Link>
+
+            <Link to="/categoria/hombres" className="men">
+              <li className="hover-nav">Hombres</li>
+            </Link>
+
+            <Link to="/categoria/mujer" className="women">
+              <li className="hover-nav">Mujer</li>
+            </Link>
+
+            <Link to="/categoria/niños" className="boys">
+              <li className="hover-nav">Niños</li>
+            </Link>
+
+            <Link to="/categoria/unisex" className="others">
+              <li className="hover-nav">Otros</li>
+            </Link>
+          </>
+        )}
+      </ul>
+      <button
+        className="mobile-menu-icon"
+        onClick={() => setIsMobile(!isMobile)}
+      >
+        {isMobile ? (
+          <FaWindowClose alt="icon-close" className="icon-close" />
+        ) : (
+          <FaAlignJustify alt="icon-menu" className="menu" />
+        )}
+      </button>
+      <div className="navbar-right">
+        <ul>
+          <Cart />
+        </ul>
+      </div>
     </nav>
-  )
-}
+  );
+};
 
 export default Header;

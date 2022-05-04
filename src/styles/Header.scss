@@ -1,18 +1,88 @@
-nav {
+.navbar {
 	display: flex;
-	justify-content: space-between;
-	padding: 0 24px;
+	justify-content: space-around;
+	align-items: center;
+	height: 75px;
+	background-color: #fff;
 	border-bottom: 1px solid rgba(169,177,245,0.75);
-	
+	.nav-links{
+		display: flex;
+		justify-content: flex-end;
+		list-style: none;
+		width: 75%;
+		gap: 3rem;
+		
+	}
+	.all, .men, .women, .boys, .others{
+		text-decoration: none;
+		color: #C7C7C7;
+		font-size: 1rem;
+		cursor: pointer;
+		border: 1px solid #fff;
+		padding: 8px;
+		font-weight: bold;
+		border-radius: 8px;
+		&:hover{
+			border: 1px solid rgba(169,177,245,0.75);
+			color: #141414;
+		}
+		&:focus{
+			border: 1px solid rgba(169,177,245,0.75);
+			color: #141414;
+		}
+	}
 }
-.menu {
+.mobile-menu-icon{
 	display: none;
+}
+.nav-links-mobile{
+	display: none;
+}
+@media screen and (max-width: 768px){
+	.nav-logo{
+		display: flex;
+		position: absolute;
+		top: 15px;
+		left: 35px;
+	}
+	.nav-links{
+		display: none !important;
+	}
+	.nav-links-mobile{
+		position: absolute;
+		display: block;
+		list-style: none;
+		background: #fff;
+		right: 0;
+		top: 75px;
+		transition: all 0.5s ease-out;
+		width: 50%;
+	}
+	.all, .men, .women, .boys, .others{
+		color: #141414 !important;
+		text-align: center;
+		padding: 32px;
+		width: 100%;
+		transition: all 0.5s ease;
+		font-weight: bold;
+	}
+	.mobile-menu-icon{
+		display: block;
+		position: absolute;
+		font-size: 30px;
+		color: #141414;
+		border: none;
+		outline: none;
+		right: 25px;
+		top: 22px;
+		background: transparent;
+		
+	}
 }
 .nav-logo {
 	width: 60px;
 	cursor: pointer;
 }
-.navbar-left ul,
 .navbar-right ul {
 	list-style: none;
 	padding: 0;
@@ -21,13 +91,7 @@ nav {
 	align-items: center;
 	height: 60px;
 }
-.navbar-left {
-	display: flex;
-}
-.navbar-left ul {
-	margin-left: 12px;
-}
-.navbar-left ul .a,
+
 .navbar-right ul .a {
 	text-decoration: none;
 	color: #C7C7C7;
@@ -36,7 +100,7 @@ nav {
 	border-radius: 8px;
 	font-weight: bold;
 }
-.navbar-left ul li .a:hover,
+
 .navbar-right ul li .a:hover {
 	border: 1px solid rgba(169,177,245,0.75);
 	color: #141414;
@@ -77,14 +141,3 @@ nav {
 }
 
 
-@media screen and (max-width: 640px) {
-	.menu {
-		display: block;
-	}
-	.navbar-left ul {
-		display: none;
-	}
-	.navbar-email {
-		display: none;
-	}
-}

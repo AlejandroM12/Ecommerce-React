@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
   return (
     <>
       {loading ? (
-        <div id="spinner" className="container">
+        <div id="spinner" className="container-loading">
           <img src={loadingGif} className="gif" alt="loading" />
         </div>
       ) : (
