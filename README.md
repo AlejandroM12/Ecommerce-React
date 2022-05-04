@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Ecommerce | Shoes
+Proyecto ecommerce de una tienda ficticia de venta de zapatillas de running, originals y muchas otras opciones más.
+Este proyecto fue construido para el curso [ReactJS](https://www.coderhouse.com/online/reactjs) de la Plataforma eLearning de Coderhouse.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![image cover](/public/banner-ecommerce.png)](https://youtu.be/BChREjBDpNA)
 
-## Available Scripts
+## :nut_and_bolt: Tecnologias
+Para modificar este proyecto es necesario saber las tecnologias basicas de la web `html`, `css` y `javascript`. Adicional a esto, la aplicación fue construida usando las siguientes tecnologias:
 
-In the project directory, you can run:
+* [React](https://reactjs.org/) \
+Libreria para `JavaScript` que nos ayuda a construir interfaces reactivas.
+* [Firebase](https://firebase.google.com/) \
+Plataforma de desarrollo de Google, que nos sirve de backend para usar los servicios de base de datos llamado `firestore`.
+* [React-Router](https://reactrouter.com/docs/en/v6) \
+React Router es una colección de  React components, hooks y utilidades de React que facilitan la creación de aplicaciones de varias páginas con React .
+* [React-Hot-Toast](https://react-hot-toast.com/) \
+Libreria para `react` usado para mostrar notificaciones al usuario sobre eventos correctos o incorrectas en la aplicación. *Por ejemplo: cuando se agrega un producto al carrito, cuando entra en las validaciones del formulario, cuando se realizó la compra, etcétera.*
+* [SCSS] \
+Un preprocesador CSS es una herramienta que nos permite generar, de manera automática, hojas de estilo, añadiéndoles características que no tiene CSS, y que son propias de los lenguajes de programación, como pueden ser variables, funciones, selectores anidados, herencia, etcétera.
+* [React-Icons](https://react-icons.github.io/react-icons/)\
+Es una pequeña librería que te permite añadir íconos (desde distintas librerías de íconos) a tus aplicaciones hechas con React. Te entrega los íconos en tu aplicación como componentes, de tal manera que se hace más fácil trabajar con ellos.
+* [React-Responsive-Carousel](http://react-responsive-carousel.js.org/) \
+Componente de carrusel potente, ligero y totalmente personalizable para aplicaciones React.
 
-### `npm start`
+## :rocket: Instalación
+Para instalar este proyecto en un entorno local (su computador) abra la `terminal` de comandos y siga estos pasos:
+**1. Clonar el repositorio** \
+Para este paso es necesario tener instalado [Git](https://git-scm.com/).
+``` shell
+git clone https://github.com/AlejandroM12/Ecommerce-React.git
+```
+Para ingresar a la carpeta de la aplicación usamos:
+``` shell
+cd ecommerce-React
+```
+**2. Instalamos las dependencias**\
+En este punto necesitaremos tener instalado [Node](https://nodejs.org/en/) y mediante `npm` (este se instala con `Node`).
+```
+npm install
+```
+este último comando creará la carpeta `node_modules`, el cual contiene todas las librerias/dependencias que necesita la aplicación.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**3. Ejecutar la aplicación**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> :warning: **IMPORTANTE** :warning: \
+> La aplicación va a requerir de un archivo **.env** en el que se encuentren las variables de entorno, como por ejemplo las credenciales para **firebase**.
 
-### `npm test`
+Voy a dejar un archivo llamado `.env.example`; Entonces bastaria con renombrarlo o copiar su contenido y ponerlo en un archivo llamado `.env` que debe estar en la **carpeta raiz del proyecto**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ahora si ya estamos listos para ejecutar la aplicación con:
 
-### `npm run build`
+``` shell
+npm run start
+```
+Ahora la aplicación deberia de estar en [http://localhost:3000](http://localhost:3000) en su navegador.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :wave: Contacto
+* Linkedin: [morelalejandro](https://www.linkedin.com/in/morelalejandro/)
+* Github: [alejandroM12](https://github.com/AlejandroM12)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## :page_facing_up: Licencia
+Este proyecto esta bajo la licencia [MIT](/LICENCE).
