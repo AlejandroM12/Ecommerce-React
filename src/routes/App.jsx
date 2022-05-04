@@ -7,6 +7,7 @@ import AppContext from '../context/AppContext';
 import Checkout from '../pages/Checkout';
 import useInitialState from '../hooks/useInitialState';
 import '../styles/Loading.scss';
+import Footer from '../components/Footer';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
                     <Route path="/cart" element={<Checkout />} />
                     <Route path="/*" element={<Navigate to='/' replace/> } />
                 </Routes>
+                <Footer/>
             </Layout>
             </AppContext.Provider>
       </BrowserRouter>
