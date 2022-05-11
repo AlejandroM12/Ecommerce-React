@@ -6,7 +6,7 @@ import {  NavLink } from 'react-router-dom';
 import '../styles/MyOrders.scss';
 
 const MyOrder = () => {
-	const {state, totalPrice} = useContext(AppContext);
+	const {state, totalPrice, emptyCart} = useContext(AppContext);
 	return (
 		<aside className="MyOrder">
 			{ state.length > 0 ? ( <>
@@ -31,10 +31,13 @@ const MyOrder = () => {
 				</div>
 				
 				<NavLink to='/cart'>
-				<button className="primary-button">
+				<button className="primary-button" >
 					IR A PAGAR
 				</button>
 				</ NavLink>
+				<button className="primary-button" onClick={emptyCart}>
+					VACIAR CARRITO
+				</button>
 			</div>
 			</>
 			) : (
