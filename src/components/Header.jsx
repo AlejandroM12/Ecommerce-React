@@ -24,8 +24,9 @@ const Header = () => {
       <Link to="/">
         <img src={logo} alt="logo" className="nav-logo" />
       </Link>
-      <ul className={isMobile ? "nav-links-mobile" : "nav-links"}
-      onClick={ ()=> setIsMobile(false)}
+      <ul
+        className={isMobile ? "nav-links-mobile" : "nav-links"}
+        onClick={() => setIsMobile(false)}
       >
         {(isMobile || screenWidth > 768) && (
           <>

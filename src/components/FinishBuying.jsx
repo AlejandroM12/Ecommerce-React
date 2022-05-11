@@ -1,8 +1,17 @@
 import { useContext, useState } from "react";
-import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch} from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  documentId,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+  writeBatch,
+} from "firebase/firestore";
 import AppContext from "../context/AppContext";
 import useForm from "../hooks/useForm";
-import {BiLoaderCircle} from "react-icons/bi";
+import { BiLoaderCircle } from "react-icons/bi";
 import toast, { Toaster } from "react-hot-toast";
 import "../styles/Form.scss";
 
@@ -16,18 +25,22 @@ const validationsForm = (form) => {
   let errors = {};
   let regexNameSurname = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
   let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
-  let regexPhone = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
+  let regexPhone =
+    /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
 
   if (!form.name.trim()) {
     errors.name = toast.error("El campo 'Nombre' es requerido");
   } else if (!regexNameSurname.test(form.name.trim())) {
-    errors.name = toast.error("El campo 'Nombre' solo acepta letras y espacios en blanco");
+    errors.name = toast.error(
+      "El campo 'Nombre' solo acepta letras y espacios en blanco"
+    );
   }
   if (!form.surname.trim()) {
     errors.surname = toast.error("El campo 'Apellido' es requerido");
   } else if (!regexNameSurname.test(form.surname.trim())) {
-    errors.surname =
-    toast.error("El campo 'Apellido' solo acepta letras y espacios en blanco");
+    errors.surname = toast.error(
+      "El campo 'Apellido' solo acepta letras y espacios en blanco"
+    );
   }
   if (!form.email.trim()) {
     errors.email = toast.error("El campo 'Email' es requerido");
@@ -44,8 +57,8 @@ const validationsForm = (form) => {
 };
 
 const FinishBuying = () => {
-  const { state, totalPrice, emptyCart} = useContext(AppContext);
-  const { form, errors, handleChange, handleBlur, setForm  } = useForm(
+  const { state, totalPrice, emptyCart } = useContext(AppContext);
+  const { form, errors, handleChange, handleBlur, setForm } = useForm(
     initialForm,
     validationsForm
   );
@@ -55,7 +68,7 @@ const FinishBuying = () => {
   // <-- GENERATE ORDER
   const generateOrder = async (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     let order = {};
     order.buyer = form;
     order.total = totalPrice();
@@ -72,17 +85,19 @@ const FinishBuying = () => {
     const queryCollection = collection(db, "orders");
     await addDoc(queryCollection, order)
       .then((resp) => {
-          setLoading(false);
-          setResponse(true);
-          setForm(initialForm);
-          setTimeout(()=> setResponse(false), 5000)
-          toast.success(`Tu compra ${resp.id} fue realizada con éxito`)
-          setTimeout(()=> emptyCart(), 6500)
+        setLoading(false);
+        setResponse(true);
+        setForm(initialForm);
+        setTimeout(() => setResponse(false), 5000);
+        toast.success(`Tu compra ${resp.id} fue realizada con éxito`);
+        setTimeout(() => emptyCart(), 6500);
       })
       .catch((err) => console.log(err))
-      .finally(()=> toast('¡Muchas gracias por tu compra!', {
-        icon: '👏',
-      }))
+      .finally(() =>
+        toast("¡Muchas gracias por tu compra!", {
+          icon: "👏",
+        })
+      );
     // UPDATE, MODIFICAR UN ARCHIVO
 
     // const queryUpdate =  doc(db, 'productos', '66jKSAod52FJ14UY4ShV')
@@ -114,94 +129,88 @@ const FinishBuying = () => {
             state.find((item) => item.id === res.id).cantidad,
         })
       )
-      
-    )
+    );
 
     batch.commit();
-
-
   }; // GENERATE ORDER -->
-  
- 
+
   return (
-      <section id="contact" className="contact">
-        <div className="section-title">
-          <h2>Información del comprador</h2>
-        </div>
-        <div className="container">
-          <form onSubmit={generateOrder} className="contactForm">
-            <div className="form-container">
-              <input
-                type="text"
-                name="name"
-                className="form-input"
-                placeholder="Nombre(s) *"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={form.name}
-                required
-              />
-              {errors.name && <Toaster position="bottom-center"
-                                  reverseOrder={false}/>}
-              
-            </div>
-            <div className="form-container">
-              <input
-                type="text"
-                name="surname"
-                className="form-input"
-                placeholder="Apellido(s) *"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={form.surname}
-                required
-              />
-              {errors.surname && <Toaster position="bottom-center"
-                                  reverseOrder={false}/>}
-            </div>
-            <div className="form-container">
-              <input
-                type="phone"
-                className="form-input"
-                name="phone"
-                placeholder="Celular *"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={form.phone}
-                required
-              />
-              {errors.phone && <Toaster position="bottom-center"
-                                  reverseOrder={false}/>}
-            </div>
-            <div className="form-container">
-              <input
-                type="email"
-                className="form-input"
-                name="email"
-                placeholder="Email *"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={form.email}
-                required
-              />
-              {errors.email && <Toaster position="bottom-center"
-                                  reverseOrder={false}/>}
-            </div>
-            <span className="spanForm">
-              Usaremos tus datos para informarte sobre la entrega.
-              
-            </span>
-            <button 
-              className="button-fw" 
-              disabled={ loading }>
-              {loading && <BiLoaderCircle />} Terminar mi compra 
-            </button>
-          </form>
-            {response && (
-              <Toaster position="bottom-center"/>
+    <section id="contact" className="contact">
+      <div className="section-title">
+        <h2>Información del comprador</h2>
+      </div>
+      <div className="container">
+        <form onSubmit={generateOrder} className="contactForm">
+          <div className="form-container">
+            <input
+              type="text"
+              name="name"
+              className="form-input"
+              placeholder="Nombre(s) *"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={form.name}
+              required
+            />
+            {errors.name && (
+              <Toaster position="bottom-center" reverseOrder={false} />
             )}
-        </div>
-      </section>
+          </div>
+          <div className="form-container">
+            <input
+              type="text"
+              name="surname"
+              className="form-input"
+              placeholder="Apellido(s) *"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={form.surname}
+              required
+            />
+            {errors.surname && (
+              <Toaster position="bottom-center" reverseOrder={false} />
+            )}
+          </div>
+          <div className="form-container">
+            <input
+              type="phone"
+              className="form-input"
+              name="phone"
+              placeholder="Celular *"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={form.phone}
+              required
+            />
+            {errors.phone && (
+              <Toaster position="bottom-center" reverseOrder={false} />
+            )}
+          </div>
+          <div className="form-container">
+            <input
+              type="email"
+              className="form-input"
+              name="email"
+              placeholder="Email *"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={form.email}
+              required
+            />
+            {errors.email && (
+              <Toaster position="bottom-center" reverseOrder={false} />
+            )}
+          </div>
+          <span className="spanForm">
+            Usaremos tus datos para informarte sobre la entrega.
+          </span>
+          <button className="button-fw" disabled={loading}>
+            {loading && <BiLoaderCircle />} Terminar mi compra
+          </button>
+        </form>
+        {response && <Toaster position="bottom-center" />}
+      </div>
+    </section>
   );
 };
 export default FinishBuying;

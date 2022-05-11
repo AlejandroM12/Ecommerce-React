@@ -4,7 +4,6 @@ const useForm = (initialForm, validateForm) => {
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
 
-
   const handleChange = (event) => {
     setForm({
       ...form,
