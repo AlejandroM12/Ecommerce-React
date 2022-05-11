@@ -20,6 +20,7 @@ const initialForm = {
   surname: "",
   phone: "",
   email: "",
+  emailr: "",
 };
 const validationsForm = (form) => {
   let errors = {};
@@ -46,6 +47,9 @@ const validationsForm = (form) => {
     errors.email = toast.error("El campo 'Email' es requerido");
   } else if (!regexEmail.test(form.email.trim())) {
     errors.email = toast.error("El campo 'Email' es incorrecto");
+  }
+  if (form.email !== form.emailr) {
+    errors.emailr = toast.error("Los campos no coinciden");
   }
   if (!form.phone.trim()) {
     errors.phone = toast.error("El campo 'Celular' es requerido");
@@ -205,14 +209,14 @@ const FinishBuying = () => {
             <input
               type="email"
               className="form-input"
-              name="email"
-              placeholder="Repite Email *"
+              name="emailr"
+              placeholder="Confirm Email *"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={form.email}
+              value={form.emailr}
               required
             />
-            {errors.email && (
+            {errors.emailr && (
               <Toaster position="bottom-center" reverseOrder={false} />
             )}
           </div>
