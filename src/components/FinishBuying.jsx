@@ -201,6 +201,21 @@ const FinishBuying = () => {
               <Toaster position="bottom-center" reverseOrder={false} />
             )}
           </div>
+          <div className="form-container">
+            <input
+              type="email"
+              className="form-input"
+              name="email"
+              placeholder="Repite Email *"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={form.email}
+              required
+            />
+            {errors.email && (
+              <Toaster position="bottom-center" reverseOrder={false} />
+            )}
+          </div>
           <span className="spanForm">
             Usaremos tus datos para informarte sobre la entrega.
           </span>
