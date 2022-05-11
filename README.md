@@ -9,17 +9,17 @@ Para modificar este proyecto es necesario saber las tecnologias basicas de la we
 
 * [React](https://reactjs.org/) \
 Libreria para `JavaScript` que nos ayuda a construir interfaces reactivas.
-* [Firebase] v"^9.7.0"(https://firebase.google.com/) \
+* [Firebase](https://firebase.google.com/)  v"^9.7.0"\
 Plataforma de desarrollo de Google, que nos sirve de backend para usar los servicios de base de datos llamado `firestore`.
-* [React-Router]v"^6.2.2"(https://reactrouter.com/docs/en/v6) \
+* [React-Router](https://reactrouter.com/docs/en/v6) v"^6.2.2"\
 React Router es una colección de  React components, hooks y utilidades de React que facilitan la creación de aplicaciones de varias páginas con React .
-* [React-Hot-Toast]v"^2.2.0"(https://react-hot-toast.com/) \
+* [React-Hot-Toast](https://react-hot-toast.com/) v"^2.2.0"\
 Libreria para `react` usado para mostrar notificaciones al usuario sobre eventos correctos o incorrectas en la aplicación. *Por ejemplo: cuando se agrega un producto al carrito, cuando entra en las validaciones del formulario, cuando se realizó la compra, etcétera.*
 * [SCSS] \
 Un preprocesador CSS es una herramienta que nos permite generar, de manera automática, hojas de estilo, añadiéndoles características que no tiene CSS, y que son propias de los lenguajes de programación, como pueden ser variables, funciones, selectores anidados, herencia, etcétera.
-* [React-Icons]v"^4.3.1",(https://react-icons.github.io/react-icons/)\
+* [React-Icons](https://react-icons.github.io/react-icons/) v"^4.3.1"\
 Es una pequeña librería que te permite añadir íconos (desde distintas librerías de íconos) a tus aplicaciones hechas con React. Te entrega los íconos en tu aplicación como componentes, de tal manera que se hace más fácil trabajar con ellos.
-* [React-Responsive-Carousel]v"^3.2.23"(http://react-responsive-carousel.js.org/) \
+* [React-Responsive-Carousel](http://react-responsive-carousel.js.org/) v"^3.2.23"\
 Componente de carrusel potente, ligero y totalmente personalizable para aplicaciones React.
 
 ## :rocket: Instalación
