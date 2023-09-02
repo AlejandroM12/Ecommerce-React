@@ -5,7 +5,7 @@
 }
 .section-title {
   font-size: 10px;
-  font-family: "adineue PRO KZ Bold";
+  font-family: 'adineue PRO KZ Bold';
   text-transform: uppercase;
 }
 .contact {
@@ -20,7 +20,7 @@
 }
 .contact .contactForm .form-input {
   border-radius: 0;
-  border: 1px solid #141414;
+  border: none;
   font-size: 18px;
   padding: 10px 15px;
   color: #141414;
@@ -31,6 +31,11 @@
   text-align: center;
   font-weight: 400;
   margin-bottom: 15px;
+}
+.contact .contactForm .form-input:focus {
+  border: 1px solid #141414;
+  outline: 1px solid #141414;
+  border-radius: 2px;
 }
 @-webkit-keyframes animate-loading {
   0% {

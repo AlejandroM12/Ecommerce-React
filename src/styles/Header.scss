@@ -18,7 +18,7 @@
   .boys,
   .others {
     text-decoration: none;
-    color: #c7c7c7;
+    color: #141414;
     font-size: 1rem;
     cursor: pointer;
     border: 1px solid #fff;
@@ -27,7 +27,8 @@
     border-radius: 8px;
     &:hover {
       border: 1px solid rgba(169, 177, 245, 0.75);
-      color: #141414;
+      font-weight: bold;
+      color: #c7c7c7;
     }
     &:focus {
       border: 1px solid rgba(169, 177, 245, 0.75);
@@ -60,6 +61,7 @@
     top: 75px;
     transition: all 0.5s ease-out;
     width: 50%;
+    z-index: 999;
   }
   .all,
   .men,
